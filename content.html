@@ -1,0 +1,686 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>IslamOne App - Content</title><style>
+    /* cspell:disable-file */
+    /* webkit printing magic: print all background colors */
+    html {
+        -webkit-print-color-adjust: exact;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    @media only screen {
+        body {
+            margin: 2em auto;
+            max-width: 900px;
+            color: rgb(55, 53, 47);
+        }
+    }
+
+    body {
+        line-height: 1.5;
+        white-space: pre-wrap;
+    }
+
+    a,
+    a.visited {
+        color: inherit;
+        text-decoration: underline;
+    }
+
+    .pdf-relative-link-path {
+        font-size: 80%;
+        color: #444;
+    }
+
+    h1,
+    h2,
+    h3 {
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+    .page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0.75em;
+    }
+
+    h1 {
+        font-size: 1.875rem;
+        margin-top: 1.875rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        margin-top: 1.25rem;
+    }
+
+    .source {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 1.5em;
+        word-break: break-all;
+    }
+
+    .callout {
+        border-radius: 3px;
+        padding: 1rem;
+    }
+
+    figure {
+        margin: 1.25em 0;
+        page-break-inside: avoid;
+    }
+
+    figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+
+    mark {
+        background-color: transparent;
+    }
+
+    .indented {
+        padding-left: 1.5em;
+    }
+
+    hr {
+        background: transparent;
+        display: block;
+        width: 100%;
+        height: 1px;
+        visibility: visible;
+        border: none;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    @media only print {
+        img {
+            max-height: 100vh;
+            object-fit: contain;
+        }
+    }
+
+    @page {
+        margin: 1in;
+    }
+
+    .collection-content {
+        font-size: 0.875rem;
+    }
+
+    .column-list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .column {
+        padding: 0 1em;
+    }
+
+    .column:first-child {
+        padding-left: 0;
+    }
+
+    .column:last-child {
+        padding-right: 0;
+    }
+
+    .table_of_contents-item {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.3;
+        padding: 0.125rem;
+    }
+
+    .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+    }
+
+    .table_of_contents-indent-2 {
+        margin-left: 3rem;
+    }
+
+    .table_of_contents-indent-3 {
+        margin-left: 4.5rem;
+    }
+
+    .table_of_contents-link {
+        text-decoration: none;
+        opacity: 0.7;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid rgba(55, 53, 47, 0.09);
+        border-collapse: collapse;
+    }
+
+    table {
+        border-left: none;
+        border-right: none;
+    }
+
+    th,
+    td {
+        font-weight: normal;
+        padding: 0.25em 0.5em;
+        line-height: 1.5;
+        min-height: 1.5em;
+        text-align: left;
+    }
+
+    th {
+        color: rgba(55, 53, 47, 0.6);
+    }
+
+    ol,
+    ul {
+        margin: 0;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+    }
+
+    li > ol:first-child,
+    li > ul:first-child {
+        margin-block-start: 0.6em;
+    }
+
+    ul > li {
+        list-style: disc;
+    }
+
+    ul.to-do-list {
+        padding-inline-start: 0;
+    }
+
+    ul.to-do-list > li {
+        list-style: none;
+    }
+
+    .to-do-children-checked {
+        text-decoration: line-through;
+        opacity: 0.375;
+    }
+
+    ul.toggle > li {
+        list-style: none;
+    }
+
+    ul {
+        padding-inline-start: 1.7em;
+    }
+
+    ul > li {
+        padding-left: 0.1em;
+    }
+
+    ol {
+        padding-inline-start: 1.6em;
+    }
+
+    ol > li {
+        padding-left: 0.2em;
+    }
+
+    .mono ol {
+        padding-inline-start: 2em;
+    }
+
+    .mono ol > li {
+        text-indent: -0.4em;
+    }
+
+    .toggle {
+        padding-inline-start: 0em;
+        list-style-type: none;
+    }
+
+    /* Indent toggle children */
+    .toggle > li > details {
+        padding-left: 1.7em;
+    }
+
+    .toggle > li > details > summary {
+        margin-left: -1.1em;
+    }
+
+    .selected-value {
+        display: inline-block;
+        padding: 0 0.5em;
+        background: rgba(206, 205, 202, 0.5);
+        border-radius: 3px;
+        margin-right: 0.5em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        white-space: nowrap;
+    }
+
+    .collection-title {
+        display: inline-block;
+        margin-right: 1em;
+    }
+
+    .page-description {
+        margin-bottom: 2em;
+    }
+
+    .simple-table {
+        margin-top: 1em;
+        font-size: 0.875rem;
+        empty-cells: show;
+    }
+    .simple-table td {
+        height: 29px;
+        min-width: 120px;
+    }
+
+    .simple-table th {
+        height: 29px;
+        min-width: 120px;
+    }
+
+    .simple-table-header-color {
+        background: rgb(247, 246, 243);
+        color: black;
+    }
+    .simple-table-header {
+        font-weight: 500;
+    }
+
+    time {
+        opacity: 0.5;
+    }
+
+    .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+    }
+
+    img.icon {
+        border-radius: 3px;
+    }
+
+    .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+
+    .user-icon-inner {
+        font-size: 0.8em;
+    }
+
+    .text-icon {
+        border: 1px solid #000;
+        text-align: center;
+    }
+
+    .page-cover-image {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        max-height: 30vh;
+    }
+
+    .page-header-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .page-header-icon-with-cover {
+        margin-top: -0.72em;
+        margin-left: 0.07em;
+    }
+
+    .page-header-icon img {
+        border-radius: 3px;
+    }
+
+    .link-to-page {
+        margin: 1em 0;
+        padding: 0;
+        border: none;
+        font-weight: 500;
+    }
+
+    p > .user {
+        opacity: 0.5;
+    }
+
+    td > .user,
+    td > time {
+        white-space: nowrap;
+    }
+
+    input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 0.6em;
+        vertical-align: middle;
+    }
+
+    p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+
+    .code,
+    code {
+        background: rgba(135, 131, 120, 0.15);
+        border-radius: 3px;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 85%;
+        tab-size: 2;
+    }
+
+    code {
+        color: #eb5757;
+    }
+
+    .code {
+        padding: 1.5em 1em;
+    }
+
+    .code-wrap {
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+
+    .code > code {
+        background: none;
+        padding: 0;
+        font-size: 100%;
+        color: inherit;
+    }
+
+    blockquote {
+        font-size: 1.25em;
+        margin: 1em 0;
+        padding-left: 1em;
+        border-left: 3px solid rgb(55, 53, 47);
+    }
+
+    .bookmark {
+        text-decoration: none;
+        max-height: 8em;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .bookmark-title {
+        font-size: 0.85em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 1.75em;
+        white-space: nowrap;
+    }
+
+    .bookmark-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bookmark-info {
+        flex: 4 1 180px;
+        padding: 12px 14px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .bookmark-image {
+        width: 33%;
+        flex: 1 1 180px;
+        display: block;
+        position: relative;
+        object-fit: cover;
+        border-radius: 1px;
+    }
+
+    .bookmark-description {
+        color: rgba(55, 53, 47, 0.6);
+        font-size: 0.75em;
+        overflow: hidden;
+        max-height: 4.5em;
+        word-break: break-word;
+    }
+
+    .bookmark-href {
+        font-size: 0.75em;
+        margin-top: 0.25em;
+    }
+
+    .sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+    .code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+    .serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+    .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+    .pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+    .pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+    .pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+    .pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+    .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+    .pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+    .pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+    .pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+    .pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+    .pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+    .pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+    .pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+    .pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+    .pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+    .pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+    .pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+    .highlight-default {
+        color: rgba(55, 53, 47, 1);
+    }
+    .highlight-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+    }
+    .highlight-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+    }
+    .highlight-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+    }
+    .highlight-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+    }
+    .highlight-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+    }
+    .highlight-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+    }
+    .highlight-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+    }
+    .highlight-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+    }
+    .highlight-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+    }
+    .highlight-gray_background {
+        background: rgba(241, 241, 239, 1);
+    }
+    .highlight-brown_background {
+        background: rgba(244, 238, 238, 1);
+    }
+    .highlight-orange_background {
+        background: rgba(251, 236, 221, 1);
+    }
+    .highlight-yellow_background {
+        background: rgba(251, 243, 219, 1);
+    }
+    .highlight-teal_background {
+        background: rgba(237, 243, 236, 1);
+    }
+    .highlight-blue_background {
+        background: rgba(231, 243, 248, 1);
+    }
+    .highlight-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+    }
+    .highlight-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+    }
+    .highlight-red_background {
+        background: rgba(253, 235, 236, 1);
+    }
+    .block-color-default {
+        color: inherit;
+        fill: inherit;
+    }
+    .block-color-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+    }
+    .block-color-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+    }
+    .block-color-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+    }
+    .block-color-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+    }
+    .block-color-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+    }
+    .block-color-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+    }
+    .block-color-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+    }
+    .block-color-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+    }
+    .block-color-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+    }
+    .block-color-gray_background {
+        background: rgba(241, 241, 239, 1);
+    }
+    .block-color-brown_background {
+        background: rgba(244, 238, 238, 1);
+    }
+    .block-color-orange_background {
+        background: rgba(251, 236, 221, 1);
+    }
+    .block-color-yellow_background {
+        background: rgba(251, 243, 219, 1);
+    }
+    .block-color-teal_background {
+        background: rgba(237, 243, 236, 1);
+    }
+    .block-color-blue_background {
+        background: rgba(231, 243, 248, 1);
+    }
+    .block-color-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+    }
+    .block-color-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+    }
+    .block-color-red_background {
+        background: rgba(253, 235, 236, 1);
+    }
+    .select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+    .select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+    .select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+    .select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+    .select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+    .select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+    .select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+    .select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+    .select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+    .select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+    .select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+    .select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+    .select-value-color-pageGlass { background-color: undefined; }
+    .select-value-color-washGlass { background-color: undefined; }
+
+    .checkbox {
+        display: inline-flex;
+        vertical-align: text-bottom;
+        width: 16;
+        height: 16;
+        background-size: 16px;
+        margin-left: 2px;
+        margin-right: 5px;
+    }
+
+    .checkbox-on {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+
+    .checkbox-off {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+
+</style></head><body><article id="10eac70e-9764-46fe-aff9-80ca6b327f48" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="images/Logo-green.png"/></div><h1 class="page-title">IslamOne App - Content</h1><p class="page-description"></p></header><div class="page-body"><p id="7cd36d1a-80b3-4f51-8ed3-62d8db9e5d8d" class="">IslamOne application contains the following:</p><h3 id="1db18e3f-12b7-4108-b3ed-eb7a7fade84c" class=""><strong>Urdu Tafaseer of Quran </strong></h3><table id="92884b8d-b85b-4dea-8786-781f1e737c9e" class="simple-table"><tbody><tr id="90e36869-1d66-49eb-8439-6317595306f5"><th id="PIJt" class="simple-table-header-color simple-table-header" style="width:35px">1</th><td id="XRbu" class="">Tafseer Ibn-e-Kaseer</td><td id="{cx~" class="">اردو ترجمہ: مولانا محمد جوناگڑہی</td><td id="y;|k" class="">تفسیر ابنِ کثیر</td></tr><tr id="bf460196-2ded-4220-ab53-21a94fba608b"><th id="PIJt" class="simple-table-header-color simple-table-header" style="width:35px">2</th><td id="XRbu" class="">Tafheem ul Quran</td><td id="{cx~" class="">مولانا سید ابوالاعلیٰ مودودی</td><td id="y;|k" class="">تفہیم القرآن</td></tr><tr id="ab59eb3a-72d0-422e-88a1-f73278e59d27"><th id="PIJt" class="simple-table-header-color simple-table-header" style="width:35px">3</th><td id="XRbu" class="">Maarif ul Quran</td><td id="{cx~" class="">مفتی محمد شفیع</td><td id="y;|k" class="">معارف القرآن</td></tr><tr id="89d8730c-99ad-47eb-be9b-2498de185025"><th id="PIJt" class="simple-table-header-color simple-table-header" style="width:35px">4</th><td id="XRbu" class="">Tadabbur-e-Quran</td><td id="{cx~" class="">مولانا امین احسن اصلاحی</td><td id="y;|k" class="">تدبر قرآن</td></tr><tr id="029a08ec-4968-4122-80e1-3804c65d7b13"><th id="PIJt" class="simple-table-header-color simple-table-header" style="width:35px">5</th><td id="XRbu" class="">Aasan Quran</td><td id="{cx~" class="">مفتی محمد تقی عثمانی</td><td id="y;|k" class="">آسان قرآن</td></tr><tr id="4da2d8c7-7099-46a8-bbf6-55fb8359c15f"><th id="PIJt" class="simple-table-header-color simple-table-header" style="width:35px">6</th><td id="XRbu" class="">Ahsan ul Bayan</td><td id="{cx~" class="">مولانا صلاح الدین یوسف</td><td id="y;|k" class="">احسن البیان</td></tr><tr id="2dd79121-6c56-4092-afb5-0d6fa9639861"><th id="PIJt" class="simple-table-header-color simple-table-header" style="width:35px">7</th><td id="XRbu" class="">Tafseer Ibn-e-Abbas</td><td id="{cx~" class="">مترجم: حافظ محمد سعید احمد عاطف</td><td id="y;|k" class="">تفسیر ابن عباس</td></tr><tr id="a968139d-45bb-4135-8e95-77a617926d05"><th id="PIJt" class="simple-table-header-color simple-table-header" style="width:35px">8</th><td id="XRbu" class="">Bayan ul Quran</td><td id="{cx~" class="">ڈاکٹر اسرار احمد</td><td id="y;|k" class="">بیان القرآن</td></tr><tr id="b5830fbc-8061-47fa-83d4-9b9621073e63"><th id="PIJt" class="simple-table-header-color simple-table-header" style="width:35px">9</th><td id="XRbu" class="">Tafseer Al-Quran-al-Kareem</td><td id="{cx~" class="">حافظ عبدالسلام بھٹوی</td><td id="y;|k" class="">تفسیر القرآن الکریم</td></tr></tbody></table><p id="580cb719-344c-47e3-909b-0a6d0c9954b3" class="">
+</p><h3 id="da2bdd16-91aa-4d9a-9b25-c7822171324e" class=""><strong>English Tafaseer of Quran</strong></h3><table id="46b314d1-51d5-4729-91bb-e6ebfcd8ef03" class="simple-table"><tbody><tr id="dc46a078-6b37-4f95-b723-1eca684f8d8a"><th id="I=~X" class="simple-table-header-color simple-table-header" style="width:61px">1</th><td id="YWkl" class="">Tafheem ul Quran</td></tr><tr id="1036ad99-35fe-4f63-874f-bfe90745a525"><th id="I=~X" class="simple-table-header-color simple-table-header" style="width:61px">2</th><td id="YWkl" class="">Maarif ul Quran</td></tr></tbody></table><h3 id="adbea2a3-88b7-40e1-8fe1-b98bf7a499b3" class=""><strong>Urdu Translations of Quran </strong></h3><table id="3aa2f3dc-18d4-4088-a0e9-ae8101fc01b8" class="simple-table"><tbody><tr id="f9cba165-109b-48b7-973c-91e603a560df"><th id="qeYe" class="simple-table-header-color simple-table-header" style="width:64px">1</th><td id="[biF" class="">Syed Abul Ala Maududi</td><td id="W\q?" class="">مولانا سید ابوالاعلی مودودی</td></tr><tr id="be1f16dc-acca-41bd-8e7f-9af418931ffc"><th id="qeYe" class="simple-table-header-color simple-table-header" style="width:64px">2</th><td id="[biF" class="">Fateh Muhammad Jalandhari</td><td id="W\q?" class="">مولانا فتح محمد جالندہری</td></tr><tr id="e23c0370-02c3-4298-8955-fa8502d83791"><th id="qeYe" class="simple-table-header-color simple-table-header" style="width:64px">3</th><td id="[biF" class="">Muhammad Junagarhi</td><td id="W\q?" class="">مولانا محمد جوناگڑہی</td></tr><tr id="89da2d00-5036-4bfa-9fdc-7cc7aa93f306"><th id="qeYe" class="simple-table-header-color simple-table-header" style="width:64px">4</th><td id="[biF" class="">Muhammad Taqi Usmani</td><td id="W\q?" class="">مفتی محمد تقی عثمانی</td></tr><tr id="2c040af8-c988-48d7-8c03-ef6115714fd2"><th id="qeYe" class="simple-table-header-color simple-table-header" style="width:64px">5</th><td id="[biF" class="">Ahmad Raza Khan</td><td id="W\q?" class="">امام احمد رضا خان</td></tr><tr id="f653c355-818e-47b7-b725-4a21cc7fadbe"><th id="qeYe" class="simple-table-header-color simple-table-header" style="width:64px">6</th><td id="[biF" class="">Tahir ul Qadri</td><td id="W\q?" class="">علامہ طاہر القادری</td></tr><tr id="1032269f-b7ec-4d6d-892d-7a70fd2b5cc0"><th id="qeYe" class="simple-table-header-color simple-table-header" style="width:64px">7</th><td id="[biF" class="">Abdus Salam Bhutvi</td><td id="W\q?" class="">مولانا عبد السلام بھٹوی</td></tr><tr id="5528257a-0753-43e5-874d-5df367a14784"><th id="qeYe" class="simple-table-header-color simple-table-header" style="width:64px">8</th><td id="[biF" class="">Abdur Rahman Kilani</td><td id="W\q?" class="">مولانا عبد الرحمٰن کیلانی</td></tr><tr id="30fe3726-b596-48d7-a970-bcb67cf8c2f0"><th id="qeYe" class="simple-table-header-color simple-table-header" style="width:64px">9</th><td id="[biF" class="">Amin Ahsan Islahi</td><td id="W\q?" class="">مولانا امین احسن اصلاحی</td></tr><tr id="196d26eb-396b-4d32-a599-abbab0fe3519"><th id="qeYe" class="simple-table-header-color simple-table-header" style="width:64px">10</th><td id="[biF" class="">Ishaq Madani</td><td id="W\q?" class="">مولانا اسحاق مدنی</td></tr><tr id="43f5f3ba-ac83-4d84-843e-fb3b2fbd9471"><th id="qeYe" class="simple-table-header-color simple-table-header" style="width:64px">11</th><td id="[biF" class="">Abdul Majid Daryabadi</td><td id="W\q?" class="">مولانا عبد الماجد دریابادی</td></tr><tr id="e89a597f-9e6b-4356-a433-945b7019fb4c"><th id="qeYe" class="simple-table-header-color simple-table-header" style="width:64px">12</th><td id="[biF" class="">Dr. Israr Ahmed</td><td id="W\q?" class="">ڈاکٹر اسرار احمد</td></tr><tr id="9b3c2c64-4638-4e46-980b-9f6d96ab606c"><th id="qeYe" class="simple-table-header-color simple-table-header" style="width:64px">13</th><td id="[biF" class="">Riffat Aijaz</td><td id="W\q?" class="">محترمہ رفعت اعجاز</td></tr></tbody></table><p id="aca33c10-d860-41c1-9122-435f21c6ca58" class="">
+</p><h3 id="3845fb06-f6c7-4e5b-bda4-85d5f0bc3fdc" class=""><strong>English Translations of Quran</strong></h3><table id="f0134205-6da2-4fb4-ac34-9f9c07f72d9a" class="simple-table"><tbody><tr id="981fee9b-0c1e-4cc4-b527-35745d79ca25"><th id="AaXc" class="simple-table-header-color simple-table-header" style="width:59px">1</th><td id="zcfa" class="">Syed Abul Ala Maududi</td></tr><tr id="a42bebf4-82ce-44f4-acc0-598695a2fa21"><th id="AaXc" class="simple-table-header-color simple-table-header" style="width:59px">2</th><td id="zcfa" class="">Muhammad Taqi Usmani</td></tr><tr id="e1af6d4e-e805-4d41-910a-07af202fdb26"><th id="AaXc" class="simple-table-header-color simple-table-header" style="width:59px">3</th><td id="zcfa" class="">Safi-ur-Rahman al-Mubarakpuri</td></tr><tr id="d892a90c-bb17-40b2-8a67-cfe52c380287"><th id="AaXc" class="simple-table-header-color simple-table-header" style="width:59px">4</th><td id="zcfa" class="">Muhammed William Pickthall</td></tr><tr id="e3a45778-006b-4dee-bb80-5969f01d0f54"><th id="AaXc" class="simple-table-header-color simple-table-header" style="width:59px">5</th><td id="zcfa" class="">Saheeh International</td></tr><tr id="16ef42da-21c7-46bd-b127-a5ae6eaba6d9"><th id="AaXc" class="simple-table-header-color simple-table-header" style="width:59px">6</th><td id="zcfa" class="">Muhammad Sarwar</td></tr><tr id="78c39bce-85e5-4f8c-a43f-eeebd4e54f90"><th id="AaXc" class="simple-table-header-color simple-table-header" style="width:59px">7</th><td id="zcfa" class="">Muhammad Habib Shakir</td></tr><tr id="2dbb991a-fa51-4f5a-97c5-d14634d9cfb3"><th id="AaXc" class="simple-table-header-color simple-table-header" style="width:59px">8</th><td id="zcfa" class="">Abdul Majid Daryabadi</td></tr><tr id="a69fc45b-ebb1-4b4c-8d39-806b2751b1cd"><th id="AaXc" class="simple-table-header-color simple-table-header" style="width:59px">9</th><td id="zcfa" class="">Abdullah Yusuf Ali</td></tr></tbody></table><p id="8540f545-ca35-4800-8dbf-fb1d98f08397" class="">
+</p><h3 id="3361bcea-c414-4b4b-b72a-d4072e839a6a" class=""><strong>Word by Word Translations in Urdu</strong></h3><table id="19e375ba-859b-4eb6-9f64-7b955706fa4a" class="simple-table"><tbody><tr id="bad3eaa6-40ef-47db-8c3f-f8e6dce3764c"><td id="W`n~" class="">1</td><td id="XYl:" class="">Hafiz Nazar Ahmed</td><td id="z_ZD" class="">حافظ نذر احمد</td></tr><tr id="489c11f3-858d-4589-bc3e-6aa91821d6de"><td id="W`n~" class="">2</td><td id="XYl:" class="">Dr. Farhat Hashmi </td><td id="z_ZD" class="">ڈاکٹر فرحت ہاشمی</td></tr></tbody></table><p id="0a99ae67-16b9-47f1-8c0b-61d7f6ea322d" class="">
+</p><h3 id="48ef7ae7-8497-4b00-aa45-c61a6d3e597b" class=""><strong>Hadith Books </strong></h3><table id="baebdc3d-93dc-48ef-b583-9d479387fe92" class="simple-table"><tbody><tr id="218950a2-edc0-47cb-a53f-23a06b0346fb"><th id="`&gt;=p" class="simple-table-header-color simple-table-header" style="width:48px">1</th><td id="wVV~" class="">Sahih Bukhari</td><td id="`abs" class="" style="width:271px">ترجمہ: مولانا محمد داؤد راز رحمہ اللہ</td><td id="bGjb" class="">صحیح بخاری</td></tr><tr id="2a0c0f13-7bc4-4fd7-ad71-d5810be2e4a8"><th id="`&gt;=p" class="simple-table-header-color simple-table-header" style="width:48px">2</th><td id="wVV~" class="">Sahih Muslim</td><td id="`abs" class="" style="width:271px">ترجمہ: پروفیسر محمد یحییٰ سلطان محمود جلالپوری</td><td id="bGjb" class="">صحیح مسلم</td></tr><tr id="ad752f0e-0330-47ce-a37c-bc45fd1e6d5b"><th id="`&gt;=p" class="simple-table-header-color simple-table-header" style="width:48px">3</th><td id="wVV~" class="">Sunan Abu Dawood</td><td id="`abs" class="" style="width:271px">ترجمہ: ڈاکٹر عبدالرحمن بن عبدالجبار الفریوائی</td><td id="bGjb" class="">سنن ابوداؤد</td></tr><tr id="7c76497e-b5ff-4798-8b7f-349d80d8f4cf"><th id="`&gt;=p" class="simple-table-header-color simple-table-header" style="width:48px">4</th><td id="wVV~" class="">Sunan Nasai</td><td id="`abs" class="" style="width:271px">ترجمہ: ڈاکٹر عبدالرحمن بن عبدالجبار الفریوائی</td><td id="bGjb" class="">سنن نسائی</td></tr><tr id="98edae47-6dcb-4600-9dfe-251666958e7e"><th id="`&gt;=p" class="simple-table-header-color simple-table-header" style="width:48px">5</th><td id="wVV~" class="">Jame&#x27; Tirmidhi</td><td id="`abs" class="" style="width:271px">ترجمہ: ڈاکٹر عبدالرحمن بن عبدالجبار الفریوائی</td><td id="bGjb" class="">جامع ترمذی</td></tr><tr id="d2950c7c-0602-4afd-943e-80d7d5c1099b"><th id="`&gt;=p" class="simple-table-header-color simple-table-header" style="width:48px">6</th><td id="wVV~" class="">Sunan Ibn-e-Majah</td><td id="`abs" class="" style="width:271px">ترجمہ: ڈاکٹر عبدالرحمن بن عبدالجبار الفریوائی</td><td id="bGjb" class="">سنن ابن ماجہ</td></tr><tr id="40039fb3-39cb-4b3f-9eed-b318d661ae41"><th id="`&gt;=p" class="simple-table-header-color simple-table-header" style="width:48px">7</th><td id="wVV~" class="">Mishkaat Shareef</td><td id="`abs" class="" style="width:271px">ترجمہ: قطب الدین خان دہلوی</td><td id="bGjb" class="">مشکوٰۃ شریف</td></tr><tr id="ece1a686-e4d6-4479-ab86-5eff6c4e0326"><th id="`&gt;=p" class="simple-table-header-color simple-table-header" style="width:48px">8</th><td id="wVV~" class="">Muawtta Imam Malik</td><td id="`abs" class="" style="width:271px">ترجمہ: علامہ وحیدالزمان صاحب</td><td id="bGjb" class="">موطا امام مالک</td></tr><tr id="89a3b40d-496d-474d-9bc5-78f83b91c01f"><th id="`&gt;=p" class="simple-table-header-color simple-table-header" style="width:48px">9</th><td id="wVV~" class="">Musnad Imam Ahmad</td><td id="`abs" class="" style="width:271px">ترجمہ: مولانا ظفراقبال صاحب</td><td id="bGjb" class="">مسند امام احمد</td></tr><tr id="bd28b4df-2cec-4d0d-8075-632659365a94"><th id="`&gt;=p" class="simple-table-header-color simple-table-header" style="width:48px">10</th><td id="wVV~" class="">Shamail Tirmidhi</td><td id="`abs" class="" style="width:271px">ترجمہ: مولانا محمدزکریا کاندھلوی صاحب</td><td id="bGjb" class="">شمائل ترمذی</td></tr><tr id="8225709a-68fd-4eb5-a0fd-7c8ecbb058ea"><th id="`&gt;=p" class="simple-table-header-color simple-table-header" style="width:48px">11</th><td id="wVV~" class="">Maarif ul Hadith</td><td id="`abs" class="" style="width:271px">ترجمہ: مولانا منظور نعمانی</td><td id="bGjb" class="">معارف الحدیث</td></tr></tbody></table><p id="4f607e06-678f-48fa-a9af-4faa33a82cd8" class="">
+</p><h3 id="ce22de4a-728c-48b9-863f-e56e23c681bb" class=""><strong>Complete Seerat un Nabi ﷺ</strong></h3><p id="e3f0494a-8f2d-4973-ba58-f962b44a2c95" class="">Compiled by Abdullah Farani<div class="indented"><p id="bf490965-ff09-4145-8998-965599cd1b2f" class="">سیرت النبی ﷺ قدم بہ قدم</p><p id="3ca3b98c-cc63-4b11-b3e3-aa53b88a3f9c" class="">عبداللہ فارانی</p><p id="91e4ed4d-e501-4344-86a5-f4adab16c2ac" class="">
+</p></div></p><h3 id="d0a8c9d6-2790-4202-b07a-922ab5972f79" class=""><strong>Biography of Companions</strong></h3><p id="6cb5bf3b-7368-4a51-a790-33fad855344e" class="">Maulana Khaleeq Ahmad<div class="indented"><p id="d73794a7-d8e9-4957-b668-500c0e6e7f88" class="">اصحاب الرسول صلی اللہ علیہ و سلم</p><p id="966cb821-13e8-4e38-98a0-08dbbfe759cc" class="">مولانا خلیق احمد</p></div></p><p id="1d205728-0442-446b-8a71-645fb5f328ca" class="">
+</p><h3 id="00468f7b-ef98-42a8-a3c4-7c5fa6dd90f1" class=""><strong>Dua, Azkaar and Sunnah</strong></h3><p id="6363fff6-daaf-40b7-af7b-7cad2c6c405f" class="">       مفتی خلیل احمد <div class="indented"><p id="c7d4d8ca-ebdf-4b94-b6b5-4d6c63d07788" class="">مفتی محمد سلمان زاہد</p><p id="6b0eb7ed-8348-40f8-80ea-8f0b74a3838e" class="">مولانا قاری سعید احمد صاحب سہارنپوری</p></div></p><p id="161257fa-b4da-47db-8fc3-4af3957288d0" class="">
+</p><p id="2901f13f-cc04-46dd-a333-903337a4f731" class=""><strong>Fiqh Section</strong><div class="indented"><p id="844140eb-1d0a-499f-8171-835f57852a60" class="">حضرت مولانا سید زوار حسین شاہ</p><p id="7d32b5c7-95da-4312-855c-244b779ea0cc" class="">کتاب: زبدۃ الفقہ</p><p id="cb74a35d-7379-472b-82d2-219666147c9b" class="">مولانا مفتی عبدالرحمن کوثر مدنی</p><p id="a7c7153d-5c82-4ca4-93b1-979fff53ee5c" class="">کتاب: حج کے پانچ دن</p><p id="e9563d18-25bb-4504-aaa1-ac4b13dfdb66" class="">حضرت مولانا محمد الیاس گھمن</p><p id="d3e59aa9-29bd-4769-b657-8436bd2d1d61" class="">کتاب: قربانی کے فضائل ومسائل</p></div></p><p id="c2e4ab8c-6500-4926-80d7-4212c155dba5" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
