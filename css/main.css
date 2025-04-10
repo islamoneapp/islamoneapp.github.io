@@ -339,6 +339,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
     font-size: larger !important;
     font-weight: bolder;
 }
-.list-font-size  span{
+.list-font-size{
     font-size: 16px;
 }
