@@ -345,4 +345,14 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
 
 #youtube-player {
     border: none!important;
+    width: 440px;
+    height: 782px;
+}
+
+
+@media (max-width: 768px) {
+    #youtube-player {
+        width: 400px; /* Approximately 9% smaller than 440px */
+        height: 710px; /* Adjusted height to maintain aspect ratio */
+    }
 }
