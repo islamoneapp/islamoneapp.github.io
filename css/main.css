@@ -99,7 +99,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
     .aa-header .aa-logo-img {
         display: none;
         padding-left: 10px;
-        /*width: 12% !important;*/
+        width: 12% !important;
     }
     #_name1 {
         margin-top: -25px;
@@ -487,4 +487,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
         /* adjust vertical alignment if needed */
         line-height: 1;
     }
+}
+
+
+html, body {
+    overflow-x: hidden;
 }
