@@ -52,6 +52,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
     letter-spacing: 1px;
 }
 
+.aa-header .aa-logo-img {
+    padding-left: 10px;
+    width: 8% !important;
+}
+
 @media (max-width: 992px) {
 
     .aa-header h1 {
@@ -65,20 +70,39 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
     .aa-header .aa-header-content li {
         font-size: 12px;
     }
+
+    .aa-header .aa-logo-img {
+        padding-left: 10px;
+        width: 12% !important;
+    }
 }
 
 @media (max-width: 768px) {
     .aa-header .aa-header-content img {
         margin-top: 2px !important;
         padding-top: none !important;
-        padding-bottom: 25px;
+        padding-bottom: 20px;
     }
-}
-
-@media (max-width: 576px) {
     .aa-header .aa-logo-img {
         padding-left: 10px;
-        width: 15% !important;
+        width: 10% !important;
+    }
+
+}
+
+
+
+@media (max-width: 576px) {
+    .aa-header {
+        text-align: center;
+    }
+    .aa-header .aa-logo-img {
+        display: none;
+        padding-left: 10px;
+        /*width: 12% !important;*/
+    }
+    #_name1 {
+        margin-top: -25px;
     }
 
     .aa-header .navbar-brand {
@@ -423,5 +447,44 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
         --bs-gutter-x: 0.5rem;
         --bs-gutter-y: 0.5rem;
     }
+
+
+    /* Font‑Awesome icons in the list */
+    .aa-header .aa-header-content ul.list-unstyled li i.fa {
+        /* default around 1em (~16px), so scale up */
+        font-size: 0.8rem;
+        /* adjust vertical alignment if needed */
+        line-height: 1;
+    }
+
+    .aa-header .aa-header-content ul {
+        padding-left: 50px;
+    }
+    .download_buttons {
+        padding-left: 25px;
+    }
 }
 
+/* Increase header text, list text & icon sizes on large devices only */
+@media (min-width: 992px) {
+    /* “Your best mobile…” paragraph */
+    .aa-header .aa-header-content p.lead {
+        /* fs-5 is about 1.25rem by default; feel free to tweak */
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+
+    /* List item text */
+    .aa-header .aa-header-content ul.list-unstyled li .list-font-size {
+        /* default was 16px; bump up to 18–20px as you like */
+        font-size: 1.25rem;
+    }
+
+    /* Font‑Awesome icons in the list */
+    .aa-header .aa-header-content ul.list-unstyled li i.fa {
+        /* default around 1em (~16px), so scale up */
+        font-size: 1.75rem;
+        /* adjust vertical alignment if needed */
+        line-height: 1;
+    }
+}
