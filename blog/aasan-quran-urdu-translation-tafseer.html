@@ -80,10 +80,34 @@
     <style>
         .hero-banner {
             position: relative;
-            background: url('/images/islamic_banner.png') center/cover no-repeat;
+            background: url('/images/islamic_banner_mobile.webp') center/cover no-repeat;
             min-height: 32vh;
             opacity: 1;
             overflow: hidden;
+        }
+        
+        /* Responsive background images */
+        @media (min-width: 768px) {
+            .hero-banner {
+                background-image: url('/images/islamic_banner_tablet.webp');
+            }
+        }
+        
+        @media (min-width: 1280px) {
+            .hero-banner {
+                background-image: url('/images/islamic_banner_desktop.webp');
+            }
+        }
+        
+        @media (min-width: 1920px) {
+            .hero-banner {
+                background-image: url('/images/islamic_banner.webp');
+            }
+        }
+        
+        /* Fallback for browsers that don't support WebP */
+        .no-webp .hero-banner {
+            background-image: url('/images/islamic_banner.png');
         }
         .hero-banner::before {
             content: "";
