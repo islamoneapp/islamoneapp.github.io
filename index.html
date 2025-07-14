@@ -53,6 +53,31 @@
   <link href="/css/paper-kit.min.css?v=1.1.1" rel="stylesheet">
   <link href="/css/main.css?v=1.1.1" rel="stylesheet">
 
+  <!-- Vercel Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script>
+    // Only load Vercel Analytics when deployed on Vercel
+    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+      const script = document.createElement('script');
+      script.defer = true;
+      script.src = '/_vercel/insights/script.js';
+      document.head.appendChild(script);
+    }
+  </script>
+
+  <!-- Vercel Speed Insights -->
+  <script>
+    // Only load Vercel Speed Insights when deployed on Vercel
+    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+      const script = document.createElement('script');
+      script.defer = true;
+      script.src = '/_vercel/speed-insights/script.js';
+      document.head.appendChild(script);
+    }
+  </script>
+
   <!-- JSON-LD: Organization, MobileApplication, WebPage, BreadcrumbList -->
   <script type="application/ld+json">
   {
