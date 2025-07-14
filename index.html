@@ -33,14 +33,19 @@
   <meta name="twitter:image"       content="https://islamoneapp.github.io/images/islamone_banner_ios.png">
 
   <!-- Favicons & PWA manifest -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32"   href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16"   href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
 
   <!-- Preconnect & Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css?family=Dosis:600|Roboto:400,700&display=swap" rel="stylesheet">
+
+  <!-- Preload critical poster images for faster video loading -->
+  <link rel="preload" href="videos/IslamOne_Video_1st_poster.jpg" as="image" media="(min-width: 768px)">
+  <link rel="preload" href="videos/IslamOne_Video_2nd_poster.jpg" as="image" media="(min-width: 768px)">
+  <link rel="preload" href="videos/IslamOne_Video_3rd_poster.jpg" as="image" media="(min-width: 768px)">
 
   <!-- CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
@@ -256,14 +261,14 @@
             <div class="col-12 col-md-4 d-none d-md-block">
                 <div class="ratio ratio-16x9">
                     <video
-                            autoplay
-                            class="w-100 h-100"
+                            class="w-100 h-100 lazy-video"
                             loop
                             muted
                             playsinline
-                            preload="auto"
-                            src="videos/IslamOne_Video_1st.mov"
+                            preload="none"
+                            data-src="videos/IslamOne_Video_1st_optimized.mp4"
                             webkit-playsinline
+                            poster="videos/IslamOne_Video_1st_poster.jpg"
                     ></video>
                 </div>
             </div>
@@ -272,14 +277,14 @@
             <div class="col-md-4 d-none d-md-block">
                 <div class="ratio ratio-16x9">
                     <video
-                            autoplay
-                            class="w-100 h-100"
+                            class="w-100 h-100 lazy-video"
                             loop
                             muted
                             playsinline
-                            preload="auto"
-                            src="videos/IslamOne_Video_3rd.mov"
+                            preload="none"
+                            data-src="videos/IslamOne_Video_3rd_optimized.mp4"
                             webkit-playsinline
+                            poster="videos/IslamOne_Video_3rd_poster.jpg"
                     ></video>
                 </div>
             </div>
@@ -288,14 +293,14 @@
             <div class="col-md-4 ">
                 <div class="ratio ratio-16x9">
                     <video
-                            autoplay
-                            class="w-100 h-100"
+                            class="w-100 h-100 lazy-video"
                             loop
                             muted
                             playsinline
-                            preload="auto"
-                            src="videos/IslamOne_Video_2nd.mov"
+                            preload="none"
+                            data-src="videos/IslamOne_Video_2nd_optimized.mp4"
                             webkit-playsinline
+                            poster="videos/IslamOne_Video_2nd_poster.jpg"
                     ></video>
                 </div>
             </div>

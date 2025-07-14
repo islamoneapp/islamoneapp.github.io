@@ -493,3 +493,97 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
 html, body {
     overflow-x: hidden;
 }
+
+/* Video Optimization Styles */
+.lazy-video {
+    background-color: #f0f0f0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.lazy-video[data-src] {
+    opacity: 0.7;
+}
+
+.lazy-video:not([data-src]) {
+    opacity: 1;
+}
+
+/* Video loading state */
+.lazy-video::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(240, 240, 240, 0.2) 25%,
+        rgba(240, 240, 240, 0.4) 50%,
+        rgba(240, 240, 240, 0.2) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    pointer-events: none;
+}
+
+.lazy-video:not([data-src])::before {
+    display: none;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Video performance optimizations */
+video {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* Enable hardware acceleration */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    /* Smooth rendering */
+    image-rendering: optimizeQuality;
+    -webkit-image-rendering: optimizeQuality;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .lazy-video {
+        animation: none;
+    }
+    
+    @keyframes shimmer {
+        0%, 100% {
+            background-position: 0 0;
+        }
+    }
+}
+
+/* Video container optimization */
+.ratio {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Connection-based optimizations */
+@media (max-width: 768px) {
+    /* On mobile, further reduce video quality if needed */
+    video {
+        filter: contrast(0.95) brightness(1.05);
+    }
+}
+
+/* For users on slow connections */
+@media (max-width: 576px), (max-height: 667px) {
+    .lazy-video {
+        /* Could add additional optimizations for very small screens */
+        filter: contrast(0.9) brightness(1.1);
+    }
+}
