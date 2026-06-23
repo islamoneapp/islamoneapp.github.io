@@ -158,18 +158,21 @@
 <body id="top">
 <header>
     <div class="aa-header">
-        <nav class="navbar navbar-expand-md navbar-transparent">
+        <nav class="navbar navbar-expand-md navbar-transparent navbar-dark">
             <div class="container">
-                <img alt="IslamOne Logo" class="img-fluid pr-3 aa-logo-img" loading="lazy" src="images/logo.png"/>
+                <img alt="IslamOne Logo" class="img-fluid pr-3 aa-logo-img" loading="eager" src="images/logo.png"/>
                 <a class="navbar-brand px-0 py-0" href="#"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link nav-text-large" href="#features">Features</a></li>
                         <li class="nav-item"><a class="nav-link nav-text-large" href="#demo-video">Demo</a></li>
                         <li class="nav-item"><a class="nav-link nav-text-large" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link nav-text-large" href="#reviews">Reviews</a></li>
-                        <li class="nav-item"><a class="nav-link nav-text-large" href="#blogs">Blogs</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link nav-text-large" href="#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-text-large" href="#blogs">Blogs</a></li>
                     </ul>
                 </div>
             </div>
@@ -286,7 +289,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12" itemref="_name1 _url4" itemscope
                      itemtype="http://schema.org/SoftwareApplication">
-                    <div class="icon icon-danger"><i aria-hidden="true" class="fa fa-book"></i></div>
+                    <div class="icon icon-danger"><i aria-hidden="true" class="fa fa-graduation-cap"></i></div>
                     <div class="description">
                         <div class="h4" itemprop="articleSection">Urdu and English Tafaseer Collection</div>
                         <p class="text-muted">
@@ -506,6 +509,42 @@
         </div>
     </div>
 
+    <!-- User Testimonials -->
+    <div class="container mb-5">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-3">
+                    <div class="card-body">
+                        <div style="color:#f4b942; font-size:1.2rem; margin-bottom:0.5rem;">★★★★★</div>
+                        <p class="card-text text-muted fst-italic mb-3">"MashaAllah, this is the best Quran app I have ever used. The offline access is a blessing during travel and the Urdu Tafseer collection is absolutely comprehensive."</p>
+                        <p style="font-weight:600; margin-bottom:0;">Tariq A.</p>
+                        <small class="text-muted">Google Play Store</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-3">
+                    <div class="card-body">
+                        <div style="color:#f4b942; font-size:1.2rem; margin-bottom:0.5rem;">★★★★★</div>
+                        <p class="card-text text-muted fst-italic mb-3">"Finally a free Islamic app with zero ads and no paywalls! Clean UI, 40+ reciters, and all the Hadith books I need. JazakAllah Khair to the developers."</p>
+                        <p style="font-weight:600; margin-bottom:0;">Sara M.</p>
+                        <small class="text-muted">Apple App Store</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-3">
+                    <div class="card-body">
+                        <div style="color:#f4b942; font-size:1.2rem; margin-bottom:0.5rem;">★★★★★</div>
+                        <p class="card-text text-muted fst-italic mb-3">"I use IslamOne every day for Quran recitation, Hadith study and daily Azkaar. It has replaced 5 separate apps for me. Highly recommended for every Muslim family."</p>
+                        <p style="font-weight:600; margin-bottom:0;">Imran H.</p>
+                        <small class="text-muted">Google Play Store</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Star Ratings: stacked with links -->
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 text-center mb-4">
@@ -538,67 +577,73 @@
 </section>
 
 
-<section class="py-5  bg-gradient-light" id="faq">
+<section class="py-5 bg-gradient-light" id="faq">
     <div class="container" itemscope itemtype="https://schema.org/FAQPage">
         <h2 class="title text-center mb-4">Frequently Asked Questions</h2>
 
+        <div id="faqAccordion">
+
         <!-- Q1 -->
-        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h3 itemprop="name">
-                Where can I find a mobile app for Quran translations in English & Urdu?
-            </h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">
-                    IslamOne is a free, ad‑free mobile app offering 20+ Quran translations
-                    in both English and Urdu. Download it now on
-                    <a href="https://play.google.com/store/apps/details?id=com.atq.quranemajeedapp.org.islamone">Google
-                        Play</a>
-                    or
-                    <a href="https://apps.apple.com/pk/app/islamone/id1547195153">App Store</a>.
-                </p>
+        <div class="card border-0 shadow-sm mb-2" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <div class="card-header aa-faq-header" id="faqHead1" data-toggle="collapse" data-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+                <h3 class="mb-0 aa-faq-title" itemprop="name">
+                    Where can I find a mobile app for Quran translations in English &amp; Urdu?
+                    <i class="fa fa-chevron-down aa-faq-icon" aria-hidden="true"></i>
+                </h3>
+            </div>
+            <div id="faqCollapse1" class="collapse" aria-labelledby="faqHead1" data-parent="#faqAccordion">
+                <div class="card-body" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                    <p itemprop="text">IslamOne is a free, ad-free mobile app offering 20+ Quran translations in both English and Urdu. Download it now on <a href="https://play.google.com/store/apps/details?id=com.atq.quranemajeedapp.org.islamone">Google Play</a> or <a href="https://apps.apple.com/pk/app/islamone/id1547195153">App Store</a>.</p>
+                </div>
             </div>
         </div>
 
         <!-- Q2 -->
-        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h3 itemprop="name">
-                Which app offers ad‑free access to authentic Hadith books?
-            </h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">
-                    IslamOne includes 11 authentic Hadith collections—completely free and
-                    without any ads or in‑app purchases. See the full list in our
-                    <a href="blog/islamone-app-content.html">Content Details</a> page.
-                </p>
+        <div class="card border-0 shadow-sm mb-2" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <div class="card-header aa-faq-header" id="faqHead2" data-toggle="collapse" data-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                <h3 class="mb-0 aa-faq-title" itemprop="name">
+                    Which app offers ad-free access to authentic Hadith books?
+                    <i class="fa fa-chevron-down aa-faq-icon" aria-hidden="true"></i>
+                </h3>
+            </div>
+            <div id="faqCollapse2" class="collapse" aria-labelledby="faqHead2" data-parent="#faqAccordion">
+                <div class="card-body" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                    <p itemprop="text">IslamOne includes 11 authentic Hadith collections—completely free and without any ads or in-app purchases. See the full list in our <a href="blog/islamone-app-content.html">Content Details</a> page.</p>
+                </div>
             </div>
         </div>
 
         <!-- Q3 -->
-        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h3 itemprop="name">
-                What app provides detailed Tafaseer in Urdu?
-            </h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">
-                    IslamOne offers 9 Urdu Tafaseer (plus 2 in English) from top scholars,
-                    fully searchable and offline.
-                </p>
+        <div class="card border-0 shadow-sm mb-2" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <div class="card-header aa-faq-header" id="faqHead3" data-toggle="collapse" data-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                <h3 class="mb-0 aa-faq-title" itemprop="name">
+                    What app provides detailed Tafaseer in Urdu?
+                    <i class="fa fa-chevron-down aa-faq-icon" aria-hidden="true"></i>
+                </h3>
+            </div>
+            <div id="faqCollapse3" class="collapse" aria-labelledby="faqHead3" data-parent="#faqAccordion">
+                <div class="card-body" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                    <p itemprop="text">IslamOne offers 9 Urdu Tafaseer (plus 2 in English) from top scholars, fully searchable and offline.</p>
+                </div>
             </div>
         </div>
 
         <!-- Q4 -->
-        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h3 itemprop="name">
-                Which app provides free Islamic resources & daily prayers in Urdu & English?
-            </h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">
-                    Beyond Quran and Hadith, IslamOne includes daily Azkaar, Duas, 6
-                    Kalimahs, and sunnah reminders—in both Urdu and English, all ad‑free.
-                </p>
+        <div class="card border-0 shadow-sm mb-2" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <div class="card-header aa-faq-header" id="faqHead4" data-toggle="collapse" data-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                <h3 class="mb-0 aa-faq-title" itemprop="name">
+                    Which app provides free Islamic resources &amp; daily prayers in Urdu &amp; English?
+                    <i class="fa fa-chevron-down aa-faq-icon" aria-hidden="true"></i>
+                </h3>
+            </div>
+            <div id="faqCollapse4" class="collapse" aria-labelledby="faqHead4" data-parent="#faqAccordion">
+                <div class="card-body" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Beyond Quran and Hadith, IslamOne includes daily Azkaar, Duas, 6 Kalimahs, and sunnah reminders in both Urdu and English, all ad-free.</p>
+                </div>
             </div>
         </div>
 
+        </div><!-- end #faqAccordion -->
     </div>
 </section>
 
@@ -610,19 +655,32 @@
 <section class="py-5 " id="blogs">
     <div class="container theme-color-text">
         <!-- Section Title -->
-        <div class="h2 text-center text-title pb-5">Read Our Blogs and Find More Apps</div>
+        <h2 class="text-center theme-color-text pb-5">Read Our Blogs and Find More Apps</h2>
 
         <!-- Blog Cards Row -->
         <div class="row">
             <!-- Blog 1 -->
             <div class="col-md-4 col-sm-12 mb-4">
-                <a class="text-decoration-none" href="blog/islamone-app-content.html" target="_blank">
+                <a class="text-decoration-none" href="blog/islamone-app-content.html">
                     <div class="card h-100 border-0 shadow-sm">
-                        <img
+                        <picture>
+                            <source
+                                media="(max-width: 576px)"
+                                srcset="images/blog_islamone_mobile.webp"
+                                type="image/webp">
+                            <source
+                                media="(max-width: 576px)"
+                                srcset="images/blog_islamone.png">
+                            <source
+                                srcset="images/blog_islamone.webp"
+                                type="image/webp">
+                            <img
                                 alt="What is in IslamOne App?"
                                 class="card-img-top img-fluid"
                                 src="images/blog_islamone.png"
-                        >
+                                loading="lazy"
+                            >
+                        </picture>
                         <div class="card-body">
                             <h5 class="card-title">What is in IslamOne App?</h5>
                             <p class="card-text text-muted">Explore the Islamic Books and key features of IslamOne Quran
@@ -636,7 +694,7 @@
 
             <!-- Blog 2 -->
             <div class="col-md-4 col-sm-12 mb-4">
-                <a class="text-decoration-none" href="blog/equranlibrary-by-islamone.html" target="_blank">
+                <a class="text-decoration-none" href="blog/equranlibrary-by-islamone.html">
                     <div class="card h-100 border-0 shadow-sm">
                         <picture>
                             <source 
@@ -886,7 +944,7 @@
             </div>
             <!-- eQuran Library Card -->
             <div class="col-md-4 col-sm-12">
-                <a class="aa-windows" href="http://equranlibrary.com/" target="_blank">
+                <a class="aa-windows" href="https://equranlibrary.com/" target="_blank" rel="noopener">
                     <div class="card theme-color-text">
                         <div class="row pb-3 align-items-center">
                             <div class="col-lg-3 col-md-12 aa-download-icon text-center text-lg-left">
@@ -909,19 +967,28 @@
     <div class="container py-5">
         <div class="row text-center">
             <div class="col-md-12">
-                <a class="btn btn-link btn-neutral" href="https://www.facebook.com/IslamOneApp" target="_blank">
+                <a class="btn btn-link btn-neutral" href="https://www.facebook.com/IslamOneApp" target="_blank" rel="noopener">
                     <i aria-hidden="true" class="fa fa-facebook fa-2x"></i>
                 </a>
-                <a class="btn btn-link btn-neutral" href="https://www.instagram.com/islamoneapp/" target="_blank">
+                <a class="btn btn-link btn-neutral" href="https://www.instagram.com/islamoneapp/" target="_blank" rel="noopener">
                     <i aria-hidden="true" class="fa fa-instagram fa-2x"></i>
                 </a>
             </div>
+            <div class="col-md-12 mt-3">
+                <a href="/privacy-policy.html" class="aa-footer-link">Privacy Policy</a>
+                <a href="#faq" class="aa-footer-link">FAQ</a>
+                <a href="#blogs" class="aa-footer-link">Blog</a>
+            </div>
             <div class="col-md-12">
-                <p class="mt-3">Copyright © IslamOne. All rights reserved.</p>
+                <p class="mt-3">Copyright &copy; IslamOne. All rights reserved.</p>
             </div>
         </div>
     </div>
 </footer>
+
+<button id="back-to-top" aria-label="Back to top" title="Back to top">
+    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+</button>
 
 <script src="scripts/jquery.min.js?ver=1.1.0"></script>
 <script src="scripts/jquery-ui-1.12.1.custom.min.js?ver=1.1.0"></script>
@@ -929,5 +996,16 @@
 <script src="scripts/bootstrap.min.js?ver=1.1.0"></script>
 <script src="scripts/paper-kit.js?ver=1.1.0"></script>
 <script src="scripts/main.js?ver=1.1.0"></script>
+<script>
+(function () {
+    var btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', function () {
+        btn.classList.toggle('visible', window.scrollY > 400);
+    });
+    btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}());
+</script>
 </body>
 </html>

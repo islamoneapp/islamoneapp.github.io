@@ -97,9 +97,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
         text-align: center;
     }
     .aa-header .aa-logo-img {
-        display: none;
+        display: block;
         padding-left: 10px;
-        width: 12% !important;
+        width: 40px !important;
     }
     #_name1 {
         margin-top: -25px;
@@ -586,4 +586,93 @@ video {
         /* Could add additional optimizations for very small screens */
         filter: contrast(0.9) brightness(1.1);
     }
+}
+
+/* Hamburger toggler on dark header */
+.aa-header .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+    padding: 4px 8px;
+}
+.aa-header .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255%2c255%2c255%2c0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Mobile nav expanded dropdown */
+@media (max-width: 768px) {
+    .aa-header .navbar-collapse {
+        background: rgba(0, 105, 95, 0.97);
+        border-radius: 8px;
+        padding: 0.5rem 1rem;
+        margin-top: 0.5rem;
+    }
+}
+
+/* FAQ accordion */
+.aa-faq-header {
+    background: #fff;
+    cursor: pointer;
+    border-radius: 8px !important;
+    padding: 1rem 1.25rem;
+    user-select: none;
+}
+.aa-faq-header:hover {
+    background: #f8f9fa;
+}
+.aa-faq-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.aa-faq-icon {
+    color: #009688;
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+    margin-left: 0.75rem;
+}
+.aa-faq-header[aria-expanded="true"] .aa-faq-icon {
+    transform: rotate(180deg);
+}
+
+/* Back to top button */
+#back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #009688;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, background 0.2s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+#back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+#back-to-top:hover {
+    background: #00796b;
+}
+
+/* Footer links */
+.aa-footer .aa-footer-link {
+    color: #aaaaaa;
+    text-decoration: none;
+    font-size: 0.875rem;
+    margin: 0 0.6rem;
+}
+.aa-footer .aa-footer-link:hover {
+    color: #dddddd;
 }
