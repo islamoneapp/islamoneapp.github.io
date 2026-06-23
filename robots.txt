@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://islamoneapp.github.io/sitemap.xml
+Sitemap: https://islamone.app/sitemap.xml
