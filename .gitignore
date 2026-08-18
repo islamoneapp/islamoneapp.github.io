@@ -1,1 +1,10 @@
 .DS_Store
+.vercel
+
+# Screenshot originals. Only the .webp files are served, so the PNGs stay
+# local: drop them in images/latest/<group>/, run
+# ./tools/optimize-screenshots.sh, and commit the .webp it produces.
+images/latest/**/*.png
+
+# App Store Connect export - would be publicly served from the repo root
+docs/

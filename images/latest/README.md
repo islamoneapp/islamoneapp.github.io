@@ -38,8 +38,10 @@ rounded corners baked in — the page draws all of that.
 A group with one screenshot renders as a static image with no dots. A group with
 none is skipped entirely — its tab never appears — so an empty folder costs nothing.
 
-Not every file in a folder is shown: the page only loads what `data-screenshots`
-lists. Unlisted files stay as a reserve you can swap in by editing that list.
+Only what `data-screenshots` lists is loaded. Unused screenshots were removed
+rather than kept as a reserve — add new ones when you need them.
 
-The `.png` originals are kept as the source of truth; the page only ever loads
-the `.webp` files.
+Only the `.webp` files are committed. The `.png` originals are gitignored — they
+stay on your machine so the converter has something to work from, but they are
+never served, so there is no reason to carry 15 MB of them in the repo. If you
+clone fresh, you will have the `.webp` files and no PNGs; that is expected.
