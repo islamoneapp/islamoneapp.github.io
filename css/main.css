@@ -1215,8 +1215,12 @@ video {
         padding-left: 0 !important;
     }
 
-    .aa-header .navbar-toggler {
-        padding: 6px 10px;
+    /* No menu on phones: every link is an anchor to a section of this one
+       page, so the toggler adds chrome without adding navigation. The logo
+       keeps the bar anchored. */
+    .aa-header .navbar-toggler,
+    .aa-header .navbar-collapse {
+        display: none !important;
     }
 
     /* Tighten the stack: was 16/24/24/22 between blocks. */
