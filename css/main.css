@@ -676,3 +676,285 @@ video {
 .aa-footer .aa-footer-link:hover {
     color: #dddddd;
 }
+
+/* ============================================================
+   iPhone 17 Pro Max device frame (header banner)
+
+   To update the banner, replace ONE file:
+       images/app-screenshot.png
+
+   Screenshot spec: a plain iPhone 17 Pro Max screenshot,
+   1320 x 2868 px, with NO frame, shadow or rounded corners
+   baked in. iOS already draws the Dynamic Island into the
+   screenshot, so only the body, bezel, corners and side
+   buttons are drawn in CSS below.
+   ============================================================ */
+.ios-device {
+    --w: clamp(230px, 58vw, 300px);          /* device outer width  */
+    --h: calc(var(--w) * 2.17273);           /* 2868 / 1320         */
+    --bezel: calc(var(--w) * 0.026);
+    --radius: calc(var(--w) * 0.165);
+    --btn-w: calc(var(--w) * 0.011);
+
+    box-sizing: border-box;
+    position: relative;
+    width: var(--w);
+    height: var(--h);
+    margin: 0 auto;
+    padding: var(--bezel);
+    border-radius: var(--radius);
+    /* deep graphite aluminium rail */
+    background: linear-gradient(145deg,
+    #4a4d52 0%, #1c1e21 18%, #313438 50%, #17181a 82%, #45484d 100%);
+    box-shadow: 0 0 0 calc(var(--w) * 0.004) #0c0d0e,
+    inset 0 0 0 calc(var(--w) * 0.006) #55585e,
+    0 calc(var(--w) * 0.09) calc(var(--w) * 0.16) rgba(0, 0, 0, .35);
+}
+
+.ios-device-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: calc(var(--radius) - var(--bezel));
+    background: #fff;
+}
+
+/* The reset here is deliberate. `.aa-header .aa-header-content img` sets
+   padding-top:40px and margin-top:2px !important; both outrank this rule on
+   specificity and would be baked into the object-fit box, pushing the
+   screenshot down inside the screen. Hence !important. */
+.ios-device-screen > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0;
+    max-width: none;
+    object-fit: cover;
+    object-position: top center;
+}
+
+/* --- Slideshow -------------------------------------------------------
+   Slides are stacked and crossfaded. Only .is-active is visible.
+   With a single screenshot main.js does nothing, so the lone <img>
+   just sits there as a static banner. */
+.ios-device-screen > img.ios-shot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .7s ease-in-out;
+}
+
+.ios-device-screen > img.ios-shot.is-active {
+    opacity: 1;
+}
+
+.ios-dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.ios-dots button {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .55);
+    cursor: pointer;
+    transition: background .25s ease, transform .25s ease;
+}
+
+.ios-dots button:hover {
+    background: rgba(255, 255, 255, .85);
+}
+
+.ios-dots button[aria-current="true"] {
+    background: #fff;
+    transform: scale(1.32);
+}
+
+.ios-dots button:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+/* Honour reduced-motion: no crossfade, and main.js skips auto-advance. */
+@media (prefers-reduced-motion: reduce) {
+    .ios-device-screen > img.ios-shot {
+        transition: none;
+    }
+}
+
+/* Action button (left) + Camera Control (right, via box-shadow) */
+.ios-device::before {
+    content: "";
+    position: absolute;
+    left: calc(var(--btn-w) * -1);
+    top: calc(var(--h) * 0.152);
+    width: var(--btn-w);
+    height: calc(var(--h) * 0.043);
+    border-radius: calc(var(--btn-w) * 0.6);
+    background: linear-gradient(90deg, #202225, #46494e);
+    box-shadow: calc(var(--w) + var(--btn-w)) calc(var(--h) * 0.225) 0 0 #3a3d42;
+}
+
+/* Volume up (left) + Volume down + Side button (right), via box-shadow */
+.ios-device::after {
+    content: "";
+    position: absolute;
+    left: calc(var(--btn-w) * -1);
+    top: calc(var(--h) * 0.212);
+    width: var(--btn-w);
+    height: calc(var(--h) * 0.065);
+    border-radius: calc(var(--btn-w) * 0.6);
+    background: linear-gradient(90deg, #202225, #46494e);
+    box-shadow: 0 calc(var(--h) * 0.082) 0 0 #3a3d42,
+    calc(var(--w) + var(--btn-w)) calc(var(--h) * 0.032) 0 0 #3a3d42;
+}
+
+
+/* ============================================================
+   Feature showcase (#demo-video): tab strip + shared iPhone frame.
+   Tabs and frame are built by scripts/main.js from .feature-group
+   elements, so this only styles what JS produces.
+   ============================================================ */
+.feature-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 34px;
+}
+
+.feature-tab {
+    padding: 9px 20px;
+    border: 1px solid rgba(0, 95, 153, .22);
+    border-radius: 999px;
+    background: transparent;
+    color: #17594d;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.feature-tab:hover {
+    background: rgba(23, 89, 77, .08);
+}
+
+.feature-tab[aria-selected="true"] {
+    border-color: transparent;
+    background: #17594d;
+    color: #fff;
+}
+
+.feature-tab:focus-visible {
+    outline: 2px solid #17594d;
+    outline-offset: 2px;
+}
+
+.feature-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* On the light section background the banner's white dots would vanish. */
+.feature-stage .ios-dots button {
+    background: rgba(23, 89, 77, .45);
+}
+
+.feature-stage .ios-dots button:hover {
+    background: rgba(23, 89, 77, .75);
+}
+
+.feature-stage .ios-dots button[aria-current="true"] {
+    background: #17594d;
+}
+
+.feature-stage .ios-dots button:focus-visible {
+    outline-color: #17594d;
+}
+
+
+/* ============================================================
+   Carousel arrows (feature showcase only - the header banner is
+   ambient and would compete with the App Store buttons).
+   Arrows flank the phone rather than overlaying it, so they never
+   read as part of the app's own UI.
+   ============================================================ */
+.ios-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.ios-arrow {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid rgba(23, 89, 77, .2);
+    border-radius: 50%;
+    background: #fff;
+    color: #17594d;
+    cursor: pointer;
+    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.ios-arrow svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.ios-arrow:hover {
+    border-color: transparent;
+    background: #17594d;
+    color: #fff;
+}
+
+.ios-arrow:active {
+    transform: scale(.94);
+}
+
+.ios-arrow:focus-visible {
+    outline: 2px solid #17594d;
+    outline-offset: 3px;
+}
+
+.ios-arrow[hidden] {
+    display: none;
+}
+
+/* Tighter beside a 230px phone on small screens. */
+@media (max-width: 480px) {
+    .ios-carousel {
+        gap: 6px;
+    }
+
+    .ios-arrow {
+        width: 38px;
+        height: 38px;
+    }
+
+    .ios-arrow svg {
+        width: 19px;
+        height: 19px;
+    }
+}

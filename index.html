@@ -45,15 +45,12 @@
   <link href="https://fonts.googleapis.com/css?family=Dosis:600|Roboto:400,700&display=swap" rel="stylesheet">
 
   <!-- Preload critical poster images for faster video loading -->
-  <link rel="preload" href="videos/IslamOne_Video_1st_poster.jpg" as="image" media="(min-width: 768px)">
-  <link rel="preload" href="videos/IslamOne_Video_2nd_poster.jpg" as="image" media="(min-width: 768px)">
-  <link rel="preload" href="videos/IslamOne_Video_3rd_poster.jpg" as="image" media="(min-width: 768px)">
 
   <!-- CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <link href="/css/bootstrap.min.css?v=1.1.1" rel="stylesheet">
   <link href="/css/paper-kit.min.css?v=1.1.1" rel="stylesheet">
-  <link href="/css/main.css?v=1.1.1" rel="stylesheet">
+  <link href="/css/main.css?v=1.7.0" rel="stylesheet">
 
   <!-- Vercel Analytics -->
   <script>
@@ -247,16 +244,38 @@
                     </div>
                 </div>
 
-                <!-- Banner: no extra top margin on mobile -->
+                <!-- Banner: no extra top margin on mobile.
+                     The iPhone frame is drawn in CSS (see .ios-device in css/main.css).
+
+                     TO UPDATE THE BANNER:
+                       1. Drop a plain 1320x2868 iPhone 17 Pro Max screenshot into
+                          the right group folder under images/latest/ (no frame or
+                          shadow - the CSS draws those), then run
+                          ./tools/optimize-screenshots.sh
+                       2. Add a line "group/file.webp|Caption for screen readers" to
+                          the data-screenshots list below (one entry per line -
+                          captions may contain commas).
+                     See images/latest/README.md for the full convention.
+                     The first entry is also the <img> below, so it shows without JS.
+                     A single entry disables the slideshow entirely. -->
                 <div class="col-md-6 text-center">
-                    <img
-                            alt="IslamOne app banner showing Quran recitation interface"
-                            class="img-fluid"
-                            itemprop="image"
-                            loading="lazy"
-                            src="images/islamone_banner_ios.png"
-                            style="max-height:650px; object-fit:contain;"
-                    >
+                    <div class="ios-device"
+                         data-screenshots="home/home.webp|IslamOne home screen showing the Ayah of the moment and prayer times
+                                           prayer-times/timetable.webp|Prayer times screen with Qibla direction and daily timetable
+                                           quran/surah-list.webp|Quran surah list with translation and Mushaf tabs
+                                           quran/translation-urdu.webp|Quran verse with Urdu and English translation
+                                           hadith/books.webp|Hadith collections including Sahih Bukhari and Sahih Muslim
+                                           supplications/list.webp|Supplications for morning, evening and night">
+                        <div class="ios-device-screen">
+                            <img
+                                    alt="IslamOne home screen showing the Ayah of the moment and prayer times"
+                                    class="ios-shot is-active"
+                                    itemprop="image"
+                                    loading="lazy"
+                                    src="images/latest/home/home.webp"
+                            >
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -339,62 +358,65 @@
 <section class="container py-5" id="demo-video">
     <div class="row">
         <!-- Heading -->
-        <div class="col-12 text-center mb-5">
+        <div class="col-12 text-center mb-4">
             <h2 class="title mt-0 theme-color-text">
-                Experience Ad‑Free Sleek Design
+                Everything Inside IslamOne
             </h2>
+            <p class="lead">
+                Browse the app feature by feature - no ads, no clutter, on every screen.
+            </p>
         </div>
+    </div>
 
-        <!-- Videos: only one on xs/sm, three on md+ -->
-        <div class="row gx-4 gy-4 justify-content-center">
-            <!-- Video 1: always visible -->
-            <div class="col-12 col-md-4 d-none d-md-block">
-                <div class="ratio ratio-16x9">
-                    <video
-                            class="w-100 h-100 lazy-video"
-                            loop
-                            muted
-                            playsinline
-                            preload="none"
-                            data-src="videos/IslamOne_Video_1st_optimized.mp4"
-                            webkit-playsinline
-                            poster="videos/IslamOne_Video_1st_poster.jpg"
-                    ></video>
-                </div>
-            </div>
+    <!-- Feature showcase.
+         Each .feature-group below becomes a tab; scripts/main.js builds the tab
+         strip and drives the single iPhone frame underneath. Screenshots for the
+         selected group crossfade automatically, exactly like the header banner.
 
-            <!-- Video 2: hidden below md -->
-            <div class="col-md-4 d-none d-md-block">
-                <div class="ratio ratio-16x9">
-                    <video
-                            class="w-100 h-100 lazy-video"
-                            loop
-                            muted
-                            playsinline
-                            preload="none"
-                            data-src="videos/IslamOne_Video_3rd_optimized.mp4"
-                            webkit-playsinline
-                            poster="videos/IslamOne_Video_3rd_poster.jpg"
-                    ></video>
-                </div>
-            </div>
+         TO ADD A GROUP:       add a .feature-group div with data-label + data-screenshots.
+         TO ADD A SCREENSHOT:  add one "group/file.webp|Caption" line to data-screenshots.
+         A group with one screenshot shows as a static image. An empty group is skipped.
+         See images/latest/README.md for the full convention. -->
+    <div class="feature-showcase">
+        <div class="feature-group" data-label="Quran"
+             data-screenshots="quran/surah-list.webp|Quran surah list with translation and Mushaf tabs
+                               quran/translation-urdu.webp|Quran verse with Urdu and English translation
+                               quran/translation-english.webp|Quran verse with English translation
+                               quran/tafseer-urdu.webp|Tafheem ul Quran tafseer in Urdu beneath the verse
+                               quran/tafseer-english.webp|Tafheem ul Quran tafseer in English beneath the verse
+                               quran/mushaf-dark.webp|Mushaf view in dark mode
+                               quran/audio.webp|Audio Quran recitation with verse-by-verse translation"></div>
 
-            <!-- Video 3: hidden below md -->
-            <div class="col-md-4 ">
-                <div class="ratio ratio-16x9">
-                    <video
-                            class="w-100 h-100 lazy-video"
-                            loop
-                            muted
-                            playsinline
-                            preload="none"
-                            data-src="videos/IslamOne_Video_2nd_optimized.mp4"
-                            webkit-playsinline
-                            poster="videos/IslamOne_Video_2nd_poster.jpg"
-                    ></video>
-                </div>
-            </div>
-        </div>
+        <div class="feature-group" data-label="Hadith"
+             data-screenshots="hadith/books.webp|Hadith collections including Sahih Bukhari and Sahih Muslim
+                               hadith/mishkaat-chapters.webp|Mishkaat chapter list with bookmarks and search
+                               hadith/mishkaat-urdu.webp|Mishkaat hadith with Arabic text and Urdu translation
+                               hadith/mishkaat-arabic.webp|Mishkaat hadith shown in Arabic
+                               hadith/bukhari-urdu.webp|Sahih Bukhari hadith with Urdu translation
+                               hadith/search.webp|Searching all hadith books in Urdu or English"></div>
+
+        <div class="feature-group" data-label="Prayer Times"
+             data-screenshots="prayer-times/timetable.webp|Prayer times with Qibla direction and daily timetable
+                               prayer-times/qibla-compass.webp|Qibla compass pointing towards Mecca
+                               prayer-times/qibla-calibrate.webp|Compass calibration guide
+                               prayer-times/settings.webp|Prayer calculation settings including madhab and location
+                               prayer-times/calculation-method.webp|Choosing a prayer calculation method
+                               prayer-times/widgets.webp|IslamOne prayer times widget on the iPhone home screen"></div>
+
+        <div class="feature-group" data-label="Supplications"
+             data-screenshots="supplications/list.webp|Supplications for morning, evening and night
+                               supplications/morning.webp|Morning supplications with English translation
+                               supplications/after-prayer.webp|Masnoon azkaar to recite after prayer"></div>
+
+        <div class="feature-group" data-label="Books"
+             data-screenshots="books/library.webp|Islamic books library with Hadith, Azkaar, Fiqh and Seerah
+                               books/seerah-list.webp|Seerat-un-Nabi chapters covering the Prophet and his companions
+                               books/seerah-chapter.webp|Reading a Seerah chapter in Urdu
+                               books/hayat-us-sahaba.webp|Hayat-us-Sahaba chapter list
+                               books/fiqh-chapter.webp|Fiqhi Masail book opened to a chapter
+                               books/history-of-islam.webp|Tareekh-e-Islam, the history of Islam
+                               books/poetry-list.webp|Allama Iqbal poetry collection
+                               books/poetry-reader.webp|Reading Zarb-e-Kaleem from the poetry collection"></div>
     </div>
 </section>
 
@@ -997,7 +1019,7 @@
 <script src="scripts/popper.min.js?ver=1.1.0"></script>
 <script src="scripts/bootstrap.min.js?ver=1.1.0"></script>
 <script src="scripts/paper-kit.js?ver=1.1.0"></script>
-<script src="scripts/main.js?ver=1.1.0"></script>
+<script src="scripts/main.js?ver=1.7.0"></script>
 <script>
 (function () {
     var btn = document.getElementById('back-to-top');
