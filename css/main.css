@@ -958,3 +958,162 @@ video {
         height: 19px;
     }
 }
+
+
+/* ============================================================
+   Store ratings + real review cards (#reviews)
+
+   Figures are hardcoded from App Store Connect / Play Console on
+   purpose. The public iTunes lookup API returns PER-STOREFRONT
+   numbers (US alone reports ~180 of the 1,900 total), so a live
+   fetch would badly understate the real rating count.
+   To refresh: edit the numbers in index.html - the bar widths are
+   inline percentages next to their counts.
+   ============================================================ */
+.store-rating {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 32px;
+    padding: 26px 30px;
+    border: 1px solid rgba(23, 89, 77, .14);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, .05);
+}
+
+.store-rating-score {
+    flex: 0 0 auto;
+    text-align: center;
+    min-width: 130px;
+}
+
+.store-rating-score .score {
+    display: block;
+    font-size: 3.4rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #17594d;
+}
+
+.store-rating-score .out-of {
+    display: block;
+    margin-top: 2px;
+    font-size: .85rem;
+    color: #6c757d;
+}
+
+.store-rating-stars {
+    margin-top: 8px;
+    color: #f4b942;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+}
+
+.store-rating-bars {
+    flex: 1 1 260px;
+    min-width: 240px;
+}
+
+.store-rating-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    font-size: .82rem;
+    color: #6c757d;
+}
+
+.store-rating-bar .label {
+    flex: 0 0 auto;
+    width: 46px;
+    color: #f4b942;
+    letter-spacing: 1px;
+    text-align: right;
+}
+
+.store-rating-bar .track {
+    flex: 1 1 auto;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(23, 89, 77, .1);
+    overflow: hidden;
+}
+
+.store-rating-bar .fill {
+    display: block;
+    height: 100%;
+    border-radius: 4px;
+    background: #17594d;
+}
+
+.store-rating-bar .count {
+    flex: 0 0 auto;
+    width: 52px;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+}
+
+.store-rating-meta {
+    flex: 1 1 100%;
+    margin: 0;
+    padding-top: 4px;
+    font-size: .88rem;
+    color: #6c757d;
+}
+
+.store-rating-meta a {
+    color: #17594d;
+    font-weight: 600;
+}
+
+.review-card {
+    height: 100%;
+    padding: 22px;
+    border: 1px solid rgba(23, 89, 77, .12);
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .04);
+}
+
+.review-card .stars {
+    margin-bottom: 8px;
+    color: #f4b942;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+}
+
+.review-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: #17594d;
+}
+
+.review-card blockquote {
+    margin: 0 0 14px;
+    font-size: .94rem;
+    line-height: 1.55;
+    color: #555;
+}
+
+.review-card footer {
+    font-size: .82rem;
+    color: #6c757d;
+}
+
+.review-card footer .who {
+    font-weight: 600;
+    color: #333;
+}
+
+@media (max-width: 575px) {
+    .store-rating {
+        gap: 20px;
+        padding: 22px 18px;
+    }
+
+    .store-rating-score .score {
+        font-size: 2.8rem;
+    }
+}

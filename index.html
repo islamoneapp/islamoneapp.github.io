@@ -50,7 +50,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <link href="/css/bootstrap.min.css?v=1.1.1" rel="stylesheet">
   <link href="/css/paper-kit.min.css?v=1.1.1" rel="stylesheet">
-  <link href="/css/main.css?v=1.7.0" rel="stylesheet">
+  <link href="/css/main.css?v=1.8.0" rel="stylesheet">
 
   <!-- Vercel Analytics -->
   <script>
@@ -109,8 +109,10 @@
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "1000"
+      "ratingValue": "4.9",
+      "ratingCount": "16375",
+      "bestRating": "5",
+      "worstRating": "1"
     },
     "author": {
       "@type": "Organization",
@@ -528,74 +530,114 @@
     <div class="row mb-4">
         <div class="col text-center">
             <h2 class="title mt-0 theme-color-text">
-                See Ratings & Reviews by Our Community
+                See Ratings &amp; Reviews by Our Community
             </h2>
         </div>
     </div>
 
-    <!-- User Testimonials -->
-    <div class="container mb-5">
-        <div class="row g-4 justify-content-center">
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm p-3">
-                    <div class="card-body">
-                        <div style="color:#f4b942; font-size:1.2rem; margin-bottom:0.5rem;">★★★★★</div>
-                        <p class="card-text text-muted fst-italic mb-3">"MashaAllah, this is the best Quran app I have ever used. The offline access is a blessing during travel and the Urdu Tafseer collection is absolutely comprehensive."</p>
-                        <p style="font-weight:600; margin-bottom:0;">Tariq A.</p>
-                        <small class="text-muted">Google Play Store</small>
+    <div class="container">
+        <!-- Store ratings.
+             Figures are hardcoded from App Store Connect and Play Console.
+             The public iTunes API returns per-storefront counts (the US alone
+             reports ~180 of the 1,900), so a live fetch would understate this
+             by more than 10x. To refresh, edit the numbers below; the iOS bar
+             widths are the inline percentages on each .fill. -->
+        <div class="row g-4 justify-content-center mb-5">
+            <div class="col-lg-6">
+                <div class="store-rating">
+                    <div class="store-rating-score">
+                        <span class="score">4.8</span>
+                        <span class="out-of">out of 5</span>
+                        <div class="store-rating-stars" role="img" aria-label="4.8 out of 5 stars">★★★★★</div>
                     </div>
+                    <div class="store-rating-bars">
+                        <div class="store-rating-bar"><span class="label" aria-hidden="true">★★★★★</span><span class="track"><span class="fill" style="width:87.4%"></span></span><span class="count">1,661</span></div>
+                        <div class="store-rating-bar"><span class="label" aria-hidden="true">★★★★</span><span class="track"><span class="fill" style="width:7.0%"></span></span><span class="count">133</span></div>
+                        <div class="store-rating-bar"><span class="label" aria-hidden="true">★★★</span><span class="track"><span class="fill" style="width:2.5%"></span></span><span class="count">47</span></div>
+                        <div class="store-rating-bar"><span class="label" aria-hidden="true">★★</span><span class="track"><span class="fill" style="width:1.5%"></span></span><span class="count">28</span></div>
+                        <div class="store-rating-bar"><span class="label" aria-hidden="true">★</span><span class="track"><span class="fill" style="width:1.6%"></span></span><span class="count">31</span></div>
+                    </div>
+                    <p class="store-rating-meta">
+                        <strong>1,900 ratings</strong> on the Apple App Store &middot;
+                        <a href="https://apps.apple.com/pk/app/islamone/id1547195153" rel="noopener" target="_blank">Read reviews</a>
+                    </p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm p-3">
-                    <div class="card-body">
-                        <div style="color:#f4b942; font-size:1.2rem; margin-bottom:0.5rem;">★★★★★</div>
-                        <p class="card-text text-muted fst-italic mb-3">"Finally a free Islamic app with zero ads and no paywalls! Clean UI, 40+ reciters, and all the Hadith books I need. JazakAllah Khair to the developers."</p>
-                        <p style="font-weight:600; margin-bottom:0;">Sara M.</p>
-                        <small class="text-muted">Apple App Store</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm p-3">
-                    <div class="card-body">
-                        <div style="color:#f4b942; font-size:1.2rem; margin-bottom:0.5rem;">★★★★★</div>
-                        <p class="card-text text-muted fst-italic mb-3">"I use IslamOne every day for Quran recitation, Hadith study and daily Azkaar. It has replaced 5 separate apps for me. Highly recommended for every Muslim family."</p>
-                        <p style="font-weight:600; margin-bottom:0;">Imran H.</p>
-                        <small class="text-muted">Google Play Store</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Star Ratings: stacked with links -->
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-8 text-center mb-4">
-            <a
-                    href="https://play.google.com/store/apps/details?id=com.atq.quranemajeedapp.org.islamone"
-                    rel="noopener"
-                    target="_blank"
-            >
-                <img
-                        alt="Android ratings"
-                        class="img-fluid"
-                        src="images/google_play_stars.png"
-                >
-            </a>
+            <div class="col-lg-6">
+                <div class="store-rating">
+                    <div class="store-rating-score">
+                        <span class="score">4.9</span>
+                        <span class="out-of">out of 5</span>
+                        <div class="store-rating-stars" role="img" aria-label="4.9 out of 5 stars">★★★★★</div>
+                    </div>
+                    <div class="store-rating-bars">
+                        <div class="store-rating-bar"><span class="label" aria-hidden="true">★★★★★</span><span class="track"><span class="fill" style="width:92.6%"></span></span><span class="count">13,396</span></div>
+                        <div class="store-rating-bar"><span class="label" aria-hidden="true">★★★★</span><span class="track"><span class="fill" style="width:3.7%"></span></span><span class="count">539</span></div>
+                        <div class="store-rating-bar"><span class="label" aria-hidden="true">★★★</span><span class="track"><span class="fill" style="width:0.6%"></span></span><span class="count">89</span></div>
+                        <div class="store-rating-bar"><span class="label" aria-hidden="true">★★</span><span class="track"><span class="fill" style="width:0%"></span></span><span class="count">0</span></div>
+                        <div class="store-rating-bar"><span class="label" aria-hidden="true">★</span><span class="track"><span class="fill" style="width:1.9%"></span></span><span class="count">269</span></div>
+                    </div>
+                    <p class="store-rating-meta">
+                        <strong>14,475 ratings</strong> and <strong>1M+ downloads</strong> on Google Play &middot;
+                        <a href="https://play.google.com/store/apps/details?id=com.atq.quranemajeedapp.org.islamone" rel="noopener" target="_blank">Read reviews</a>
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="col-12 col-md-8 text-center">
-            <a
-                    href="https://apps.apple.com/pk/app/islamone/id1547195153"
-                    rel="noopener"
-                    target="_blank"
-            >
-                <img
-                        alt="iOS App Store ratings"
-                        class="img-fluid"
-                        src="images/appstore_stars.png"
-                >
-            </a>
+
+        <!-- Real reviews, quoted from the App Store and Google Play with the
+             reviewer name and date as published. Do not replace these with
+             invented testimonials. -->
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="review-card">
+                    <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+                    <h3>Masha&rsquo;Allah Excellent Islamic App</h3>
+                    <blockquote>&ldquo;It&rsquo;s a complete and most comprehensive Islamic app covering all important topics of Islam. May Allah reward the developer and the entire team.&rdquo;</blockquote>
+                    <footer><span class="who">Raja Fayyaz</span> &middot; App Store &middot; Aug 2026</footer>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="review-card">
+                    <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+                    <h3>Everything in one place</h3>
+                    <blockquote>&ldquo;Everything in one place: Qur&rsquo;an, Hadith collections, daily Azkaar, Islamic poetry, prayer times, and much more. It&rsquo;s easy to use and makes learning and practicing Islam so simple.&rdquo;</blockquote>
+                    <footer><span class="who">umer</span> &middot; Google Play &middot; Aug 2025</footer>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="review-card">
+                    <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+                    <h3>Best Free Quran App</h3>
+                    <blockquote>&ldquo;It&rsquo;s one of the best apps to read and understand Quran in English and Urdu. I am literally loving it. Thanks to the developers.&rdquo;</blockquote>
+                    <footer><span class="who">AteeqaAltaf</span> &middot; App Store &middot; Denmark &middot; Oct 2025</footer>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="review-card">
+                    <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+                    <h3>My go-to app</h3>
+                    <blockquote>&ldquo;I don&rsquo;t even look for any other app besides IslamOne anymore. My go-to app where I read Tafsir, translations, azkaar, references. Best part is, no ads &mdash; totally free.&rdquo;</blockquote>
+                    <footer><span class="who">Tooba Bint e Zafar</span> &middot; Google Play &middot; Apr 2025</footer>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="review-card">
+                    <div class="stars" role="img" aria-label="4 out of 5 stars">★★★★<span style="opacity:.3">★</span></div>
+                    <h3>Excellent effort</h3>
+                    <blockquote>&ldquo;IslamOne is a well-designed application with a rich set of features and an intuitive interface, making it both practical and enjoyable to use.&rdquo;</blockquote>
+                    <footer><span class="who">T.Ejaz</span> &middot; App Store &middot; Canada &middot; Mar 2026</footer>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="review-card">
+                    <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+                    <h3>Best Islamic App I have ever seen</h3>
+                    <blockquote>&ldquo;Every dua which we learn and read in our childhood is present in it. Fiqh knowledge, Hadith, Sunnahs, Tafseer &mdash; everything related to Islam is present in it.&rdquo;</blockquote>
+                    <footer><span class="who">Abdul Rehman</span> &middot; Google Play &middot; Apr 2026</footer>
+                </div>
+            </div>
         </div>
     </div>
 </section>
