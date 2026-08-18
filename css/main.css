@@ -471,8 +471,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
         padding-left: 0;
     }
 
-    /* The navbar is hidden on phones, and it was 65px tall - without
-       replacing that height the h1 sits flush against the browser chrome. */
+    /* No navbar on the home page any more, so this is the only thing
+       keeping the headline off the browser chrome. */
     .aa-header .aa-header-content {
         padding-top: 52px;
     }
@@ -1215,14 +1215,6 @@ video {
         padding-left: 0 !important;
     }
 
-    /* No navbar at all on phones. Every link in it was an anchor to a
-       section of this same page, and with the toggler and the brand mark
-       both gone there is nothing left to show - so hide the bar and
-       reclaim its height. The h1 immediately below carries the branding. */
-    .aa-header .navbar {
-        display: none !important;
-    }
-
     /* Tighten the stack: was 16/24/24/22 between blocks. */
     .aa-header .aa-header-content h1 {
         margin-bottom: .5rem !important;
@@ -1370,5 +1362,67 @@ video {
     /* fa-linkedin carries me-1, a Bootstrap 5 class that does nothing here. */
     #team .team-card .btn-sm .fa {
         margin-right: 5px;
+    }
+}
+
+
+/* ============================================================
+   Feature subpage navbar.
+   The shared .navbar-transparent is transparent with white links, which
+   is fine over a hero and unreadable everywhere else - past the hero the
+   background behind it is white, so it was white-on-white for the whole
+   length of the page. This one is solid.
+   ============================================================ */
+.page-nav {
+    background: #17594d;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, .12);
+}
+
+.page-nav .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff !important;
+    font-weight: 700;
+}
+
+.page-nav .navbar-brand img {
+    width: 34px;
+    height: auto;
+}
+
+.page-nav .nav-link {
+    color: rgba(255, 255, 255, .82) !important;
+    font-size: .95rem;
+}
+
+.page-nav .nav-link:hover,
+.page-nav .nav-link:focus {
+    color: #fff !important;
+}
+
+.page-nav .nav-link[aria-current="page"] {
+    color: #fff !important;
+    font-weight: 700;
+    box-shadow: inset 0 -2px 0 rgba(255, 255, 255, .75);
+}
+
+.page-nav .navbar-toggler {
+    border-color: rgba(255, 255, 255, .4);
+}
+
+@media (max-width: 767.98px) {
+    .page-nav .navbar-collapse {
+        padding-bottom: .5rem;
+    }
+}
+
+
+/* With the home page navbar removed, nothing above the hero content is
+   holding it off the top of the window on tablet and desktop; the mobile
+   rule only covers phones. */
+@media (min-width: 768px) {
+    .aa-header .aa-header-content {
+        padding-top: 46px;
     }
 }
