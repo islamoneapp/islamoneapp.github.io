@@ -99,7 +99,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
     .aa-header .aa-logo-img {
         display: block;
         padding-left: 10px;
-        width: 40px !important;
+        width: 56px !important;
     }
     #_name1 {
         margin-top: -25px;
@@ -449,19 +449,37 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
     }
 
 
-    /* Font‑Awesome icons in the list */
+    /* Match the 16px text these icons label, and give them a fixed box so
+       the labels start on one column. Previously 0.8rem - smaller than the
+       text, which made them read as specks. */
     .aa-header .aa-header-content ul.list-unstyled li i.fa {
-        /* default around 1em (~16px), so scale up */
-        font-size: 0.8rem;
-        /* adjust vertical alignment if needed */
-        line-height: 1;
+        font-size: 1rem;
+        line-height: 1.5;
+        width: 1.5em;
+        text-align: center;
+        opacity: .9;
     }
 
-    .aa-header .aa-header-content ul {
-        padding-left: 50px;
+    /* Was padding-left:50px here and 25px on .download_buttons, which put the
+       headline, the bullets and the store buttons on three different left
+       edges. The list is now centred as a block with its text left-aligned,
+       so everything shares one axis. */
+    .aa-header .aa-header-content ul.list-unstyled:not(.hero-proof) {
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
     }
+
+    /* Hero content starts ~9px before the navbar ends; without this the
+       brand mark collides with the h1. */
+    .aa-header .aa-header-content {
+        padding-top: 30px;
+    }
+
     .download_buttons {
-        padding-left: 25px;
+        padding-left: 0;
+        justify-content: center;
     }
 }
 
@@ -1115,5 +1133,238 @@ video {
 
     .store-rating-score .score {
         font-size: 2.8rem;
+    }
+}
+
+
+/* On phones the header mockup and the feature showcase are two phone
+   frames within two screens of each other, and the showcase one is far
+   more useful. Hide the header mockup below md: the hero drops from
+   ~999px to ~500px and the showcase tabs land inside the first screen.
+   scripts/main.js also skips building the banner slideshow at this width,
+   so the screenshots are never downloaded on mobile. */
+@media (max-width: 767.98px) {
+    .aa-header .ios-device,
+    .aa-header .ios-dots {
+        display: none;
+    }
+}
+
+
+/* ============================================================
+   Hero proof strip - the real store figures, above the fold.
+   Keep these in sync with #reviews and the schema.org
+   aggregateRating in index.html.
+   ============================================================ */
+.hero-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    justify-content: center;
+    margin: 22px 0 0;
+    padding: 0;
+}
+
+.hero-proof li {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.hero-proof strong {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.hero-proof .star {
+    margin-left: 2px;
+    font-size: 1rem;
+    color: #ffd35c;
+}
+
+.hero-proof span {
+    font-size: .72rem;
+    opacity: .82;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+@media (min-width: 768px) {
+    .hero-proof {
+        justify-content: flex-start;
+        gap: 10px 34px;
+    }
+}
+
+
+/* ============================================================
+   Mobile hero: breathing room at the edges, and tighter vertical
+   rhythm so more of the page fits the first screen.
+   ============================================================ */
+@media (max-width: 767.98px) {
+    /* The navbar container had padding:0, so the brand mark sat at x=0 and
+       the toggler's edge at x=100vw, while every element below starts at
+       16px. Put all three on the same gutter. */
+    .aa-header .navbar > .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .aa-header .aa-logo-img {
+        padding-left: 0 !important;
+    }
+
+    .aa-header .navbar-toggler {
+        padding: 6px 10px;
+    }
+
+    /* Tighten the stack: was 16/24/24/22 between blocks. */
+    .aa-header .aa-header-content h1 {
+        margin-bottom: .5rem !important;
+    }
+
+    .aa-header .aa-header-content p.lead {
+        margin-bottom: 1rem !important;
+        font-size: 1.05rem;
+        line-height: 1.4;
+    }
+
+    .aa-header .aa-header-content ul.list-unstyled:not(.hero-proof) {
+        margin-bottom: 1rem !important;
+    }
+
+    .aa-header .aa-header-content ul.list-unstyled:not(.hero-proof) li {
+        margin-bottom: .25rem !important;
+    }
+
+    /* me-3 on the first badge is a Bootstrap 5 class on a Bootstrap 4 build,
+       so it never applied - the gap here is deliberate. */
+    .download_buttons {
+        gap: 12px;
+    }
+
+    .download_buttons a:first-child img {
+        max-width: 148px !important;
+    }
+
+    .download_buttons a:last-child img {
+        max-width: 197px !important;
+    }
+
+    .hero-proof {
+        margin-top: 16px;
+    }
+}
+
+
+/* ============================================================
+   Team cards on mobile.
+   The columns are col-md-5 / col-md-7, so below md they stack and the
+   photo goes full-width - two people cost 1810px, over two screens.
+   Below md they become a compact row: circular avatar left, details
+   right. Desktop is untouched.
+   ============================================================ */
+@media (max-width: 767.98px) {
+    /* Paper Kit's .section adds 70px top and bottom, and the container's
+       own padding stacked on top of it - 204px of this section was padding
+       alone. Collapse the outer one and keep a single modest inner gutter. */
+    #team.section {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    #team .container {
+        padding-top: 1.75rem !important;
+        padding-bottom: 1.75rem !important;
+    }
+
+    #team h2.title {
+        font-size: 1.6rem;
+        margin-bottom: .4rem !important;
+    }
+
+    #team > .container > .text-center p {
+        font-size: .88rem;
+        margin-bottom: 0;
+    }
+
+    /* Last card's own margin doubles up with the container padding. */
+    #team .row > .col-md-6:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    #team > .container > .text-center {
+        margin-bottom: 1.5rem !important;
+    }
+
+    #team .col-md-6 {
+        margin-bottom: .75rem !important;
+    }
+
+    #team .team-card {
+        padding: .85rem !important;
+    }
+
+    /* Top-align so the avatar sits beside the name, not floating
+       mid-card below it (.align-items-center in the markup wins otherwise). */
+    #team .team-card > .row {
+        flex-wrap: nowrap;
+        align-items: flex-start !important;
+    }
+
+    /* The image column - no col-* class applies below md, so pin it. */
+    #team .team-card > .row > div:first-child {
+        flex: 0 0 76px;
+        max-width: 76px;
+    }
+
+    /* !important: the markup carries Bootstrap's .rounded-left, which
+       otherwise wins and yields "4px 50% 50% 4px" instead of a circle. */
+    #team .team-card img {
+        width: 76px;
+        height: 76px;
+        object-fit: cover;
+        object-position: top center;
+        border-radius: 50% !important;
+    }
+
+    #team .team-card > .row > div:last-child {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    #team .team-card .card-body {
+        padding: 0 0 0 .9rem;
+    }
+
+    #team .team-card .card-title {
+        margin-bottom: .15rem;
+        font-size: 1rem;
+    }
+
+    #team .team-card .card-text {
+        font-size: .82rem;
+        line-height: 1.35;
+        margin-bottom: .1rem !important;
+    }
+
+    /* The rule between role and app credit is noise at this size. */
+    #team .team-card hr {
+        display: none;
+    }
+
+    #team .team-card .mt-3 {
+        margin-top: .5rem !important;
+    }
+
+    #team .team-card .btn-sm {
+        padding: .15rem .55rem;
+        font-size: .74rem;
+    }
+
+    /* fa-linkedin carries me-1, a Bootstrap 5 class that does nothing here. */
+    #team .team-card .btn-sm .fa {
+        margin-right: 5px;
     }
 }

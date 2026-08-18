@@ -321,6 +321,9 @@ document.addEventListener('DOMContentLoaded', function() {
   function initBanner() {
     var device = document.querySelector('.ios-device[data-screenshots]');
     if (!device) return;
+    // Hidden below md (see css/main.css). Bail out before building any
+    // slides so the screenshots are never fetched on phones.
+    if (window.matchMedia('(max-width: 767.98px)').matches) return;
     var slides = parseSlides(device.getAttribute('data-screenshots'));
     if (slides.length < 2) return;   // lone <img> stays as a static banner
     createSlideshow(device, device.parentNode).setSlides(slides, true);
