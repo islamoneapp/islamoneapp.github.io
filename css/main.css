@@ -471,10 +471,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
         padding-left: 0;
     }
 
-    /* Hero content starts ~9px before the navbar ends; without this the
-       brand mark collides with the h1. */
+    /* The navbar is hidden on phones, and it was 65px tall - without
+       replacing that height the h1 sits flush against the browser chrome. */
     .aa-header .aa-header-content {
-        padding-top: 30px;
+        padding-top: 52px;
     }
 
     .download_buttons {
@@ -1215,11 +1215,11 @@ video {
         padding-left: 0 !important;
     }
 
-    /* No menu on phones: every link is an anchor to a section of this one
-       page, so the toggler adds chrome without adding navigation. The logo
-       keeps the bar anchored. */
-    .aa-header .navbar-toggler,
-    .aa-header .navbar-collapse {
+    /* No navbar at all on phones. Every link in it was an anchor to a
+       section of this same page, and with the toggler and the brand mark
+       both gone there is nothing left to show - so hide the bar and
+       reclaim its height. The h1 immediately below carries the branding. */
+    .aa-header .navbar {
         display: none !important;
     }
 
