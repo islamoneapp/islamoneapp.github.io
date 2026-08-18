@@ -1481,3 +1481,82 @@ video {
         margin-bottom: .6rem !important;
     }
 }
+
+
+/* ============================================================
+   Team section on tablet and desktop.
+   Two developer bios cost 750px against 442px for the six-card feature
+   grid, 260px of it padding: Paper Kit's .section adds 70px top and
+   bottom and the container's 48px stacked on top. Same fix as mobile,
+   plus the compact avatar-left card so two people do not outweigh the
+   feature grid.
+   ============================================================ */
+@media (min-width: 768px) {
+    #team.section {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    #team .container {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    #team > .container > .text-center {
+        margin-bottom: 2rem !important;
+    }
+
+    #team .team-card {
+        padding: 1.1rem !important;
+    }
+
+    #team .team-card > .row {
+        flex-wrap: nowrap;
+        align-items: flex-start !important;
+    }
+
+    #team .team-card > .row > div:first-child {
+        flex: 0 0 104px;
+        max-width: 104px;
+    }
+
+    /* .rounded-left in the markup would otherwise win and give an
+       asymmetric radius instead of a circle. */
+    #team .team-card img {
+        width: 104px;
+        height: 104px;
+        object-fit: cover;
+        object-position: top center;
+        border-radius: 50% !important;
+    }
+
+    #team .team-card > .row > div:last-child {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    #team .team-card .card-body {
+        padding: 0 0 0 1.1rem;
+    }
+
+    #team .team-card .card-title {
+        margin-bottom: .2rem;
+    }
+
+    #team .team-card .card-text {
+        margin-bottom: .15rem !important;
+        font-size: .9rem;
+    }
+
+    #team .team-card hr {
+        display: none;
+    }
+
+    #team .team-card .mt-3 {
+        margin-top: .6rem !important;
+    }
+
+    #team .col-md-6 {
+        margin-bottom: 0 !important;
+    }
+}
