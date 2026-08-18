@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Prayer Times &amp; Qibla Compass | Free Namaz Timing App — IslamOne</title>
+    <meta name="description"
+          content="Accurate prayer times for your location with 11 calculation methods, Hanafi or Shafi'i Asr, adhan notifications for each prayer, a live Qibla compass and home screen widgets. Free, no ads, works offline.">
+    <meta name="keywords"
+          content="prayer times app, namaz timing app, salah times, qibla direction, qibla compass, adhan notification app, fajr time, iftar time, sehri time, hijri calendar, prayer times widget, free prayer times app, offline prayer times">
+    <meta name="author" content="IslamOne Team">
+    <meta name="robots" content="index,follow">
+
+    <link rel="canonical" href="https://islamone.app/prayer-times-qibla-app.html">
+
+    <meta property="og:site_name" content="IslamOne">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Prayer Times &amp; Qibla Compass — IslamOne">
+    <meta property="og:description"
+          content="Accurate namaz timings with 11 calculation methods, adhan notifications, a live Qibla compass and widgets. Free and offline.">
+    <meta property="og:image" content="https://islamone.app/images/islamone_banner_ios.png">
+    <meta property="og:url" content="https://islamone.app/prayer-times-qibla-app.html">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@IslamOneApp">
+    <meta name="twitter:title" content="Prayer Times &amp; Qibla Compass — IslamOne">
+    <meta name="twitter:description"
+          content="Namaz timings, adhan notifications, Qibla compass and widgets. Free, no ads, offline.">
+    <meta name="twitter:image" content="https://islamone.app/images/islamone_banner_ios.png">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Prayer Times & Qibla Compass",
+            "url": "https://islamone.app/prayer-times-qibla-app.html",
+            "description": "Accurate prayer times with 11 calculation methods, adhan notifications for each prayer, a live Qibla compass and home screen widgets.",
+            "isPartOf": {
+                "@type": "WebSite",
+                "name": "IslamOne",
+                "url": "https://islamone.app/"
+            },
+            "about": {
+                "@type": "MobileApplication",
+                "name": "IslamOne",
+                "applicationCategory": "LifestyleApplication",
+                "operatingSystem": "ANDROID, IOS",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "ratingCount": "16375",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                }
+            }
+        }
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://islamone.app/"},
+                {"@type": "ListItem", "position": 2, "name": "Prayer Times & Qibla", "item": "https://islamone.app/prayer-times-qibla-app.html"}
+            ]
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Dosis:600|Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css?v=1.1.1" rel="stylesheet">
+    <link href="/css/paper-kit.min.css?v=1.1.1" rel="stylesheet">
+    <link href="/css/main.css?v=2.4.0" rel="stylesheet">
+
+    <style>
+        .page-hero {
+            padding: 90px 0 60px;
+            background: linear-gradient(160deg, #17594d 0%, #2e8b7f 60%, #58a99b 100%);
+            color: #fff;
+        }
+
+        .page-hero h1 {
+            font-size: 2.3rem;
+            margin-bottom: .75rem;
+        }
+
+        .page-hero .lead {
+            font-size: 1.08rem;
+            opacity: .95;
+        }
+
+        article {
+            max-width: 900px;
+        }
+
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .cat-grid li {
+            padding: 12px 14px;
+            border: 1px solid rgba(23, 89, 77, .14);
+            border-radius: 10px;
+            background: #fff;
+            font-size: .92rem;
+        }
+
+        .cat-grid li strong {
+            display: block;
+            color: #17594d;
+        }
+
+        .mode-table td:first-child {
+            width: 46px;
+            font-size: 1.3rem;
+        }
+    </style>
+</head>
+<body id="top">
+
+<nav class="navbar navbar-expand-md navbar-transparent fixed-top">
+    <div class="container">
+        <img alt="IslamOne logo" class="img-fluid pr-3 aa-logo-img" src="/images/logo.png" style="width:6.5%">
+        <a class="navbar-brand px-0 py-0" href="/">IslamOne</a>
+        <button aria-controls="navPage" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                data-target="#navPage" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navPage">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link nav-text-large" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link nav-text-large" href="/#reviews">Reviews</a></li>
+                <li class="nav-item"><a class="nav-link nav-text-large" href="/#blogs">Blogs</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="page-hero text-center">
+    <div class="container">
+        <h1>Prayer Times &amp; Qibla Compass</h1>
+        <p class="lead mb-4">
+            Accurate namaz timings for wherever you are, an adhan for every prayer, and a live
+            Qibla compass &mdash; inside the same free app as the Quran, Hadith and duas.
+            No adverts, and it keeps working without a signal.
+        </p>
+        <ul class="hero-proof list-unstyled">
+            <li><strong>11</strong><span>calculation methods</span></li>
+            <li><strong>5</strong><span>notification modes</span></li>
+            <li><strong>6</strong><span>times + sunrise</span></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <div class="container py-5">
+        <article class="mx-auto">
+
+            <h2 class="theme-color-text">Today&rsquo;s times, and a countdown to the next</h2>
+            <p>
+                The prayer card shows Fajr, Sunrise, Dhuhr, Asr, Maghrib and Isha for your location,
+                marks which prayer is currently in, and counts down to the next one on a circular
+                ring. Tap anywhere on it to refresh. The Hijri date sits alongside, and you can move
+                through days to check times ahead or behind.
+            </p>
+
+            <div class="row justify-content-center my-5">
+                <div class="col-12 col-md-4 text-center mb-4">
+                    <div class="ios-device">
+                        <div class="ios-device-screen">
+                            <img alt="Prayer times for the day with Qibla and a countdown to the next prayer"
+                                 loading="lazy" src="/images/latest/prayer-times/timetable.webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 text-center mb-4 d-none d-md-block">
+                    <div class="ios-device">
+                        <div class="ios-device-screen">
+                            <img alt="Qibla compass pointing towards the Kaaba in Makkah"
+                                 loading="lazy" src="/images/latest/prayer-times/qibla-compass.webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 text-center mb-4 d-none d-md-block">
+                    <div class="ios-device">
+                        <div class="ios-device-screen">
+                            <img alt="Prayer times settings with calculation method and madhab options"
+                                 loading="lazy" src="/images/latest/prayer-times/settings.webp">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="theme-color-text">Calculated the way your community calculates</h2>
+            <p>
+                Prayer times differ by the convention your local mosque follows, which is why a single
+                fixed calculation is never right for everyone. IslamOne offers
+                <strong>11 methods</strong>, plus a fully custom option:
+            </p>
+            <ul class="cat-grid my-4">
+                <li><strong>Umm Al Qura</strong>Makkah</li>
+                <li><strong>Muslim World League</strong>Global</li>
+                <li><strong>Karachi</strong>Pakistan</li>
+                <li><strong>Egyptian</strong>Egypt</li>
+                <li><strong>Dubai</strong>UAE</li>
+                <li><strong>Qatar</strong></li>
+                <li><strong>Kuwait</strong></li>
+                <li><strong>Singapore</strong></li>
+                <li><strong>North America</strong>ISNA</li>
+                <li><strong>Moon Sighting Committee</strong></li>
+                <li><strong>Custom</strong>your own Fajr and Isha angles</li>
+            </ul>
+            <p>
+                On top of the method you can set <strong>Asr according to your madhab</strong> &mdash;
+                Hanafi or Shafi&rsquo;i &mdash; and nudge any of the six times by a few minutes if
+                your masjid runs slightly differently. If the Hijri date is a day out for you, adjust
+                it by up to two days, and choose whether the Islamic day rolls over at Maghrib rather
+                than midnight.
+            </p>
+
+            <h2 class="theme-color-text">An adhan for every prayer &mdash; or none at all</h2>
+            <p>
+                Notifications are set <strong>per prayer</strong>, so Fajr can wake you with the full
+                adhan while Dhuhr stays a silent banner during work. Five modes for each:
+            </p>
+            <table class="table table-sm mode-table my-4">
+                <tbody>
+                <tr><td>🕌</td><td><strong>Adhan</strong> &mdash; the full call to prayer</td></tr>
+                <tr><td>🔔</td><td><strong>Tone</strong> &mdash; a short notification sound</td></tr>
+                <tr><td>📳</td><td><strong>Vibrate</strong> &mdash; vibration only</td></tr>
+                <tr><td>🔕</td><td><strong>Silent</strong> &mdash; an on-screen banner, no sound</td></tr>
+                <tr><td>⏸️</td><td><strong>Off</strong> &mdash; nothing at all</td></tr>
+                </tbody>
+            </table>
+            <p>
+                Several adhan recordings and tones are included, and a <strong>test notification</strong>
+                button lets you check your setup rather than waiting until Fajr to discover it was
+                silent.
+            </p>
+
+            <h2 class="theme-color-text">Qibla direction, wherever you are</h2>
+            <p>
+                A live compass points towards the Kaaba in Makkah from your current position. If your
+                phone&rsquo;s compass drifts &mdash; which it does, especially indoors and near metal
+                &mdash; the app tells you and shows you the figure-eight motion that fixes it, rather
+                than quietly pointing the wrong way.
+            </p>
+            <p>
+                You do not need a separate Qibla app, and you do not need a signal: your last known
+                location is remembered, so both prayer times and Qibla still work offline.
+            </p>
+
+            <h2 class="theme-color-text">On your home screen</h2>
+            <p>
+                Widgets put the next prayer and its countdown on your home or lock screen, so you can
+                check without opening anything. There is a compact version showing the next three
+                prayers, a current-prayer status view, and a fasting tracker with Suhoor and Iftar
+                times for Ramadan.
+            </p>
+
+            <div class="row justify-content-center my-5">
+                <div class="col-12 col-md-5 text-center mb-4">
+                    <div class="ios-device">
+                        <div class="ios-device-screen">
+                            <img alt="Prayer times widget on the phone home screen showing all six times"
+                                 loading="lazy" src="/images/latest/prayer-times/widgets.webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 text-center mb-4 d-none d-md-block">
+                    <div class="ios-device">
+                        <div class="ios-device-screen">
+                            <img alt="Choosing a prayer time calculation method from the list"
+                                 loading="lazy" src="/images/latest/prayer-times/calculation-method.webp">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="theme-color-text">Free, offline, no adverts</h2>
+            <p>
+                Prayer times are calculated on your device from your location &mdash; there is no
+                account, no login and no subscription. Your coordinates are used only to work out the
+                times and the Qibla direction, and they stay on your phone.
+            </p>
+
+            <div class="text-center my-5">
+                <a class="d-inline-block mr-2" href="https://apps.apple.com/pk/app/islamone/id1547195153"
+                   rel="noopener" target="_blank">
+                    <img alt="Download on the App Store" src="/images/appstore.png"
+                         style="width:100%; max-width:170px; height:auto;">
+                </a>
+                <a class="d-inline-block"
+                   href="https://play.google.com/store/apps/details?id=com.atq.quranemajeedapp.org.islamone"
+                   rel="noopener" target="_blank">
+                    <img alt="Get it on Google Play" src="/images/playstore.png"
+                         style="width:100%; max-width:226px; height:auto;">
+                </a>
+            </div>
+
+            <section itemscope itemtype="https://schema.org/FAQPage">
+                <h2 class="theme-color-text mb-4">Common questions</h2>
+
+                <div class="mb-4" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <h3 class="h5" itemprop="name">Which free app gives accurate prayer times for my city?</h3>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <p itemprop="text">IslamOne calculates prayer times from your location using any of 11
+                            recognised methods — Umm Al Qura, Muslim World League, Karachi, Egyptian, Dubai, Qatar,
+                            Kuwait, Singapore, North America, Moon Sighting Committee, or your own custom Fajr and Isha
+                            angles. You can also set Asr to Hanafi or Shafi'i and adjust any individual time by a few
+                            minutes to match your local masjid. It is free and has no adverts.</p>
+                    </div>
+                </div>
+
+                <div class="mb-4" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <h3 class="h5" itemprop="name">Can I get an adhan notification for each prayer?</h3>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Yes, and you set it per prayer. Each of the six prayers can be set to the
+                            full adhan, a notification tone, vibration only, a silent banner, or off entirely — so Fajr
+                            can play the adhan while Dhuhr stays silent. Several adhan recordings are included, and a
+                            test button lets you check the setup in advance.</p>
+                    </div>
+                </div>
+
+                <div class="mb-4" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <h3 class="h5" itemprop="name">Does IslamOne show the Qibla direction?</h3>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Yes. A live compass points towards the Kaaba in Makkah from wherever you
+                            are. If your phone's compass needs recalibrating the app says so and shows you the
+                            figure-eight motion to correct it, instead of pointing the wrong way silently. No separate
+                            Qibla app is needed.</p>
+                    </div>
+                </div>
+
+                <div class="mb-4" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <h3 class="h5" itemprop="name">Do prayer times work without internet?</h3>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Yes. Times are calculated on your device rather than fetched from a server,
+                            and your last known location is remembered, so both the prayer timetable and the Qibla
+                            compass keep working with no signal.</p>
+                    </div>
+                </div>
+
+                <div class="mb-4" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <h3 class="h5" itemprop="name">Is the Hijri date adjustable?</h3>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Yes. The Hijri date can be shifted by up to two days to match local moon
+                            sighting, and you can choose whether the Islamic day begins at Maghrib rather than at
+                            midnight.</p>
+                    </div>
+                </div>
+            </section>
+
+            <p class="text-muted mt-5">
+                Prayer times are one part of the app. IslamOne also has the
+                <a href="/">Quran with translations and tafseer, 11 hadith collections</a> and
+                <a href="/supplications-azkaar-urdu-english.html">429 supplications in Urdu and English</a>
+                &mdash; all free, all offline.
+            </p>
+
+        </article>
+    </div>
+</main>
+
+<footer class="footer-black aa-footer">
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <a class="btn btn-link btn-neutral" href="https://www.facebook.com/IslamOneApp" target="_blank"><i
+                        class="fa fa-facebook fa-2x"></i></a>
+                <a class="btn btn-link btn-neutral" href="https://www.instagram.com/islamoneapp/" target="_blank"><i
+                        class="fa fa-instagram fa-2x"></i></a>
+            </div>
+            <div class="col-md-12">
+                <p class="mt-3">© IslamOne. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/scripts/jquery.min.js?ver=1.1.0"></script>
+<script src="/scripts/popper.min.js?ver=1.1.0"></script>
+<script src="/scripts/bootstrap.min.js?ver=1.1.0"></script>
+</body>
+</html>
