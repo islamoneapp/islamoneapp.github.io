@@ -1426,3 +1426,58 @@ video {
         padding-top: 46px;
     }
 }
+
+
+/* ============================================================
+   Blog cards on mobile.
+   Eight full-width image cards cost 1975px - over two screens - to list
+   eight links. Below md they become compact rows: square thumbnail left,
+   title and a two-line summary right, the same shape as the team cards.
+   Desktop keeps the full image cards.
+   ============================================================ */
+@media (max-width: 767.98px) {
+    #blogs .card {
+        flex-direction: row;
+        align-items: center;
+        padding: .6rem;
+    }
+
+    #blogs .card picture {
+        flex: 0 0 84px;
+        max-width: 84px;
+    }
+
+    #blogs .card .card-img-top {
+        width: 84px;
+        height: 84px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    #blogs .card .card-body {
+        flex: 1 1 auto;
+        min-width: 0;
+        padding: 0 0 0 .85rem;
+    }
+
+    #blogs .card .card-title {
+        margin-bottom: .2rem;
+        font-size: .96rem;
+        line-height: 1.25;
+    }
+
+    /* Two lines is enough to say what the post is; the title carries it. */
+    #blogs .card .card-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 0;
+        font-size: .8rem;
+        line-height: 1.35;
+    }
+
+    #blogs .row > [class*="col-"] {
+        margin-bottom: .6rem !important;
+    }
+}
