@@ -1628,3 +1628,15 @@ video {
     letter-spacing: .04em;
     text-transform: uppercase;
 }
+
+/* The main card (IslamOne on iPhone and Android) spans two columns and has two store buttons. */
+.gs-main { grid-column: span 2; }
+@media (max-width: 575px) { .gs-main { grid-column: auto; } }
+.gs-icons { display: flex; gap: 12px; }
+.gs-sub small { display: block; margin-top: 4px; color: #9ca3af; font-size: 13px; }
+.gs-ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.gs-main .gs-cta { text-decoration: none !important; }
+.gs-main .gs-cta:hover { background: #00796b; color: #fff; }
+#download .gs-cta .fa-apple, #download .gs-cta .fa-android { font-size: 16px; }
+.gs-card.gs-main:hover .gs-cta { background: #009688; }
+.gs-card.gs-main .gs-cta:hover { background: #00796b; }
