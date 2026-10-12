@@ -1640,3 +1640,4 @@ video {
 #download .gs-cta .fa-apple, #download .gs-cta .fa-android { font-size: 16px; }
 .gs-card.gs-main:hover .gs-cta { background: #009688; }
 .gs-card.gs-main .gs-cta:hover { background: #00796b; }
+#download .gs-cta .fa-desktop { font-size: 14px; }
