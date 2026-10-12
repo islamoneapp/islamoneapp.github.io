@@ -20,7 +20,8 @@ IslamOne is a 100% free, ad-free mobile application for reading, listening to, a
 
 ## Download Links
 - **iOS App Store**: https://apps.apple.com/pk/app/islamone/id1547195153
-- **Google Play Store**: https://play.google.com/store/apps/details?id=com.atq.quranemajeedapp.org.islamonepro
+- **Google Play Store (IslamOne Pro, the same app as iOS)**: https://play.google.com/store/apps/details?id=com.atq.quranemajeedapp.org.islamonepro
+- **IslamOne Library (Android only, the original IslamOne Android app for in-depth study)**: https://play.google.com/store/apps/details?id=com.atq.quranemajeedapp.org.islamone
 - **eQuran Library (Web)**: http://equranlibrary.com/
 
 ## Target Audience
