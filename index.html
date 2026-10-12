@@ -50,7 +50,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <link href="/css/bootstrap.min.css?v=1.1.1" rel="stylesheet">
   <link href="/css/paper-kit.min.css?v=1.1.1" rel="stylesheet">
-  <link href="/css/main.css?v=2.9.0" rel="stylesheet">
+  <link href="/css/main.css?v=2.10.0" rel="stylesheet">
 
   <!-- Vercel Analytics -->
   <script>
@@ -983,75 +983,33 @@
 <section class=" py-5 bg-gradient-light " id="download">
     <div class="container theme-color-text">
         <div class="h2 text-center text-title pb-5">Get Started with IslamOne Today</div>
-        <div class="row">
-            <!-- iOS Download Card -->
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                <a class="aa-apple" href="https://apps.apple.com/pk/app/islamone/id1547195153" target="_blank">
-                    <div class="card theme-color-text">
-                        <div class="row pb-3 align-items-center">
-                            <div class="col-lg-3 col-md-12 aa-download-icon theme-color-text text-center text-lg-left">
-                                <i aria-hidden="true" class="pt-4 pl-lg-4 fa fa-apple fa-4x"></i>
-                            </div>
-                            <div class="col-lg-9 col-md-12 aa-download-icon-detail text-center text-lg-left">
-                                <div class="h4 pb-1"><span>IslamOne iOS</span></div>
-                                <p class="text-muted">Download on App Store</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Android Download Card -->
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                <a class="aa-android"
-                   href="https://play.google.com/store/apps/details?id=com.atq.quranemajeedapp.org.islamonepro"
-                   target="_blank">
-                    <div class="card theme-color-text">
-                        <div class="row pb-3 align-items-center">
-                            <div class="col-lg-3 col-md-12 aa-download-icon text-center text-lg-left">
-                                <i aria-hidden="true" class="pt-4 pl-lg-4 fa fa-android fa-4x"></i>
-                            </div>
-                            <div class="col-lg-9 col-md-12 aa-download-icon-detail text-center text-lg-left">
-                                <div class="h4 pb-1">IslamOne Pro</div>
-                                <p class="text-muted">Android &middot; same app as iPhone</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- IslamOne Library Card (the original Android app: in-depth study; Android only) -->
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                <a class="aa-android"
-                   href="https://play.google.com/store/apps/details?id=com.atq.quranemajeedapp.org.islamone"
-                   target="_blank" rel="noopener">
-                    <div class="card theme-color-text">
-                        <div class="row pb-3 align-items-center">
-                            <div class="col-lg-3 col-md-12 aa-download-icon text-center text-lg-left">
-                                <i aria-hidden="true" class="pt-4 pl-lg-4 fa fa-book fa-4x"></i>
-                            </div>
-                            <div class="col-lg-9 col-md-12 aa-download-icon-detail text-center text-lg-left">
-                                <div class="h4 pb-1">IslamOne Library</div>
-                                <p class="text-muted">Android only &middot; for in-depth study</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- eQuran Library Card -->
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                <a class="aa-windows" href="https://equranlibrary.com/" target="_blank" rel="noopener">
-                    <div class="card theme-color-text">
-                        <div class="row pb-3 align-items-center">
-                            <div class="col-lg-3 col-md-12 aa-download-icon text-center text-lg-left">
-                                <i aria-hidden="true" class="pt-4 pl-lg-4 fa fa-globe fa-4x"></i>
-                            </div>
-                            <div class="col-lg-9 col-md-12 aa-download-icon-detail text-center text-lg-left">
-                                <div class="h4 pb-1">eQuran Library</div>
-                                <p class="text-muted">Go to eQuran library Online</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+        <!-- Download cards: equal height, icon / name / one line / store button (css/main.css .gs-*). -->
+        <div class="gs-grid">
+            <a class="gs-card" href="https://apps.apple.com/pk/app/islamone/id1547195153" target="_blank" rel="noopener">
+                <span class="gs-icon"><i class="fa fa-apple" aria-hidden="true"></i></span>
+                <span class="gs-title">IslamOne</span>
+                <span class="gs-sub">For iPhone and iPad</span>
+                <span class="gs-cta">App Store <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+            <a class="gs-card" href="https://play.google.com/store/apps/details?id=com.atq.quranemajeedapp.org.islamonepro" target="_blank" rel="noopener">
+                <span class="gs-icon"><i class="fa fa-android" aria-hidden="true"></i></span>
+                <span class="gs-title">IslamOne Pro</span>
+                <span class="gs-sub">For Android: the same app as on iPhone</span>
+                <span class="gs-cta">Google Play <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+            <a class="gs-card" href="https://play.google.com/store/apps/details?id=com.atq.quranemajeedapp.org.islamone" target="_blank" rel="noopener">
+                <span class="gs-badge">Android only</span>
+                <span class="gs-icon"><i class="fa fa-book" aria-hidden="true"></i></span>
+                <span class="gs-title">IslamOne Library</span>
+                <span class="gs-sub">For in-depth study: tafaseer and hadith books</span>
+                <span class="gs-cta">Google Play <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+            <a class="gs-card" href="https://equranlibrary.com/" target="_blank" rel="noopener">
+                <span class="gs-icon"><i class="fa fa-globe" aria-hidden="true"></i></span>
+                <span class="gs-title">eQuran Library</span>
+                <span class="gs-sub">Read online in your browser</span>
+                <span class="gs-cta">Visit website <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
         </div>
     </div>
 </section>

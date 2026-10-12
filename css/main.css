@@ -1560,3 +1560,71 @@ video {
         margin-bottom: 0 !important;
     }
 }
+
+
+/* "Get Started" download cards (index.html): equal heights, centred, one store button each. */
+.gs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+@media (max-width: 991px) { .gs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 575px) { .gs-grid { grid-template-columns: 1fr; gap: 16px; } }
+.gs-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    padding: 36px 24px 28px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .05), 0 10px 30px rgba(0, 150, 136, .08);
+    text-decoration: none !important;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.gs-card:hover { transform: translateY(-3px); box-shadow: 0 2px 6px rgba(0, 0, 0, .06), 0 16px 40px rgba(0, 150, 136, .16); }
+.gs-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    margin-bottom: 18px;
+    border-radius: 50%;
+    background: #e0f2f1;
+    font-size: 32px;
+}
+#download .gs-icon i, #download .gs-card:hover .gs-icon i { color: #009688; }
+.gs-title { font-family: Dosis, sans-serif; font-weight: 600; font-size: 23px; color: #00796b; line-height: 1.2; }
+.gs-sub { flex: 1; margin-top: 8px; color: #6b7280; font-size: 15px; line-height: 1.5; }
+.gs-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 9px 20px;
+    border-radius: 999px;
+    background: #009688;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+}
+#download .gs-cta i { color: #fff; font-size: 12px; }
+.gs-card:hover .gs-cta { background: #00796b; }
+.gs-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #fff3e0;
+    color: #b45309;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
